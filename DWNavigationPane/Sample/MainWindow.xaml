@@ -1,12 +1,69 @@
-﻿<Window x:Class="Sample.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Sample"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+﻿<Window
+    x:Class="Sample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dwnav="clr-namespace:DWNavigationPane;assembly=DWNavigationPane"
+    xmlns:local="clr-namespace:Sample"
+    xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    SizeToContent="WidthAndHeight"
+    mc:Ignorable="d">
+    <Grid
+        x:Name="BaseGrid"
+        Width="500"
+        Height="500">
+
+        <maicons:PackIconControl
+            x:Name="PageIcon"
+            Width="200"
+            Height="200"
+            Margin="0,125,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Foreground="#B7EFCD"
+            Kind="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+
+        <TextBlock
+            x:Name="PageLabel"
+            Margin="0,335,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            FontFamily="Century Gothic"
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="#B7EFCD"
+            Text="Home Page"
+            TextAlignment="Center" />
+
+        <dwnav:NavigationPane
+            HorizontalAlignment="Left"
+            Background="#F0363636"
+            BackgroundHover="#363636"
+            CompactWidth="48"
+            ExtendedWidth="180"
+            FontFamily="Century Gothic"
+            FontSize="13"
+            Foreground="#FFBCBC"
+            ForegroundHover="#4CD3C2"
+            Header="TRANSLUCENT"
+            IconSize="18"
+            IsExtended="False">
+            <dwnav:NavigationPane.Resources>
+                <Style TargetType="{x:Type dwnav:NavigationPaneItem}">
+                    <EventSetter Event="Click" Handler="ItemClick" />
+                </Style>
+            </dwnav:NavigationPane.Resources>
+            <dwnav:NavigationPane.MainMenu>
+                <dwnav:NavigationPaneItem Content="Home" Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <dwnav:NavigationPaneItem Content="Search" Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
+                <dwnav:NavigationPaneItem Content="Edit" Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
+            </dwnav:NavigationPane.MainMenu>
+            <dwnav:NavigationPane.BottomMenu>
+                <dwnav:NavigationPaneItem Content="About" Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
+                <dwnav:NavigationPaneItem Content="Settings" Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
+            </dwnav:NavigationPane.BottomMenu>
+        </dwnav:NavigationPane>
     </Grid>
 </Window>
