@@ -12,44 +12,49 @@
     mc:Ignorable="d">
     <Grid
         x:Name="BaseGrid"
-        Width="500"
-        Height="500">
+        Width="Auto"
+        Height="Auto">
 
-        <maicons:PackIconControl
-            x:Name="PageIcon"
-            Width="200"
-            Height="200"
-            Margin="0,125,0,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Top"
-            Foreground="#B7EFCD"
-            Kind="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
-
-        <TextBlock
-            x:Name="PageLabel"
-            Margin="0,335,0,0"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Top"
-            FontFamily="Century Gothic"
-            FontSize="28"
-            FontWeight="Bold"
-            Foreground="#B7EFCD"
-            Text="Home Page"
-            TextAlignment="Center" />
+        <Border
+            MinWidth="450"
+            MinHeight="500"
+            Margin="50,0,0,0">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Vertical">
+                <maicons:PackIconControl
+                    x:Name="PageIcon"
+                    Width="200"
+                    Height="200"
+                    Foreground="#B7EFCD"
+                    Kind="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <TextBlock
+                    x:Name="PageLabel"
+                    Margin="0,14,0,0"
+                    FontFamily="Century Gothic"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Foreground="#B7EFCD"
+                    Text="Home Page"
+                    TextAlignment="Center" />
+            </StackPanel>
+        </Border>
 
         <dwnav:NavigationPane
+            x:Name="NavigationPane"
             HorizontalAlignment="Left"
             Background="#F0363636"
             BackgroundHover="#363636"
             CompactWidth="48"
-            ExtendedWidth="180"
+            ExtendedWidth="220"
             FontFamily="Century Gothic"
             FontSize="13"
             Foreground="#FFBCBC"
             ForegroundHover="#4CD3C2"
-            Header="TRANSLUCENT"
+            Header="THIS IS TRANSLUCENT"
             IconSize="18"
-            IsExtended="False">
+            IsExtended="True">
             <dwnav:NavigationPane.Resources>
                 <Style TargetType="{x:Type dwnav:NavigationPaneItem}">
                     <EventSetter Event="Click" Handler="ItemClick" />
