@@ -11,7 +11,9 @@
     Feel free to contribute to this repository!
 </p>
 
-<img src="Resources/Sample_DWNavigationPane.gif" alt="Sample DWNavigationPane"/>
+<div align="center">
+    <img src="Resources/Sample_DWNavigationPane.gif" alt="Sample DWNavigationPane"/>
+</div>
 
 <h2> Notice of Non-Affiliation and Disclaimer </h2>
 <p> 
