@@ -221,7 +221,7 @@ namespace DWNavigationPane
 
         #region Main Menu Property
 
-        [Description("Gets the main menu container for the pane")]
+        [Description("Gets the main menu collection of the pane")]
         public NavigationPaneItemCollection MainMenu
         {
             get => (NavigationPaneItemCollection)GetValue(MainMenuProperty);
@@ -239,7 +239,7 @@ namespace DWNavigationPane
 
         #region Bottom Menu Property
 
-        [Description("Gets the bottom menu container for the pane")]
+        [Description("Gets the bottom menu collection for the pane")]
         public NavigationPaneItemCollection BottomMenu
         {
             get => (NavigationPaneItemCollection)GetValue(BottomMenuProperty);

@@ -65,7 +65,7 @@
                         </Style>
                     </ControlTemplate.Resources>
                     <DockPanel Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" LastChildFill="True">
-                        <local:NavigationPaneItem
+                        <local:NavigationPaneHeaderButton
                             x:Name="PART_HeaderButton"
                             Content="{Binding Header, RelativeSource={RelativeSource TemplatedParent}}"
                             DockPanel.Dock="Top"

@@ -57,7 +57,7 @@ namespace DWNavigationPane
             set => SetValue(IsExtendedProperty, value);
         }
 
-        public static readonly DependencyProperty IsExtendedProperty;
+        protected static readonly DependencyProperty IsExtendedProperty;
 
         #endregion IsExtended Property
 
