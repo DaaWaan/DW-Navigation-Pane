@@ -23,6 +23,7 @@
     <li> Tooltips </li>
 </ul>
 
+<br/>
 <h2> Notice of Non-Affiliation and Disclaimer </h2>
 <p> 
     This control is not affiliated, associated, authorized, endorsed by, or in any way officially connected with MahApps, or any of its subsidiaries or its affiliates. 
