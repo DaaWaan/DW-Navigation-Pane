@@ -11,6 +11,8 @@
     Feel free to contribute to this repository!
 </p>
 
+<img src="Resources/Sample_DWNavigationPane.gif" alt="Sample DWNavigationPane"/>
+
 <h2> Notice of Non-Affiliation and Disclaimer </h2>
 <p> 
     This control is not affiliated, associated, authorized, endorsed by, or in any way officially connected with MahApps, or any of its subsidiaries or its affiliates. 
