@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DWNavigationPane;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,13 @@ namespace Sample
     /// </summary>
     public partial class MainWindow : Window
     {
+        private void ItemClick(object sender, RoutedEventArgs e)
+        {
+            var Sender = sender as INavigationPaneItem;
+            PageLabel.Text = $"{Sender.Content} Page";
+            PageIcon.Kind = Sender.Icon;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
