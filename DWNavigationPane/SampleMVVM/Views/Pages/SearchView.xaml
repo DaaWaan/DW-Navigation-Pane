@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="SampleMVVM.Views.SearchView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SampleMVVM.Views"
+    xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:SampleMVVM.ViewModels"
+    d:DataContext="{d:DesignInstance vm:SearchViewModel,
+                                     IsDesignTimeCreatable=True}"
+    d:DesignHeight="400"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Orientation="Vertical">
+        <maicons:PackIconControl
+            x:Name="PageIcon"
+            Width="200"
+            Height="200"
+            Foreground="#B7EFCD"
+            Kind="{Binding Icon}" />
+        <TextBlock
+            x:Name="PageLabel"
+            Margin="0,14,0,0"
+            FontFamily="Century Gothic"
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="#B7EFCD"
+            Text="{Binding Text}"
+            TextAlignment="Center" />
+    </StackPanel>
+</UserControl>
