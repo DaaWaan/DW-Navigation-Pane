@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace DWNavigationPane
 {
-    public class NavigationPaneItem : Button, INavigationPaneItem
+    public class PaneButton : Button, IPaneElement
     {
         #region Dependency Properties
 
@@ -23,7 +23,7 @@ namespace DWNavigationPane
         protected static readonly DependencyProperty IconProperty = DependencyProperty.Register(
             name: "Icon",
             propertyType: typeof(Enum),
-            ownerType: typeof(NavigationPaneItem),
+            ownerType: typeof(PaneButton),
             typeMetadata: new PropertyMetadata(
                 defaultValue: default(Enum)));
 
@@ -117,47 +117,47 @@ namespace DWNavigationPane
 
         #endregion Inheritable Dependency Properties
 
-        static NavigationPaneItem()
+        static PaneButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                forType: typeof(NavigationPaneItem),
+                forType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
-                    defaultValue: typeof(NavigationPaneItem)));
+                    defaultValue: typeof(PaneButton)));
 
             #region Initialization of Inheritable Dependency Properties
 
             IconSizeProperty = NavigationPane.IconSizeProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(double),
                     flags: FrameworkPropertyMetadataOptions.Inherits));
 
             IsExtendedProperty = NavigationPane.IsExtendedProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(bool),
                     flags: FrameworkPropertyMetadataOptions.Inherits));
 
             CompactWidthProperty = NavigationPane.CompactWidthProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(double),
                     flags: FrameworkPropertyMetadataOptions.Inherits));
 
             ExtendedWidthProperty = NavigationPane.ExtendedWidthProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(double),
                     flags: FrameworkPropertyMetadataOptions.Inherits));
 
             BackgroundHoverProperty = NavigationPane.BackgroundHoverProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(Brush),
                     flags: FrameworkPropertyMetadataOptions.Inherits));
 
             ForegroundHoverProperty = NavigationPane.ForegroundHoverProperty.AddOwner(
-                ownerType: typeof(NavigationPaneItem),
+                ownerType: typeof(PaneButton),
                 typeMetadata: new FrameworkPropertyMetadata(
                     defaultValue: default(Brush),
                     flags: FrameworkPropertyMetadataOptions.Inherits));

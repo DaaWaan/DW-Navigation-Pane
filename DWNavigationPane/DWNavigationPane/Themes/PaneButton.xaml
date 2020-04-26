@@ -4,7 +4,7 @@
     xmlns:local="clr-namespace:DWNavigationPane"
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks">
 
-    <Style TargetType="{x:Type local:NavigationPaneItem}">
+    <Style TargetType="{x:Type local:PaneButton}">
 
         <Setter Property="Height" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Background" Value="Transparent" />
@@ -14,7 +14,7 @@
 
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:NavigationPaneItem}">
+                <ControlTemplate TargetType="{x:Type local:PaneButton}">
                     <StackPanel Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Orientation="Horizontal">
                         <Border Width="{Binding CompactWidth, RelativeSource={RelativeSource TemplatedParent}}">
                             <maicons:PackIconControl

@@ -222,36 +222,36 @@ namespace DWNavigationPane
         #region Main Menu Property
 
         [Description("Gets the main menu collection of the pane")]
-        public NavigationPaneItemCollection MainMenu
+        public PaneItemCollection MainMenu
         {
-            get => (NavigationPaneItemCollection)GetValue(MainMenuProperty);
+            get => (PaneItemCollection)GetValue(MainMenuProperty);
             set => SetValue(MainMenuProperty, value);
         }
 
         private static readonly DependencyProperty MainMenuProperty = DependencyProperty.Register(
             name: "MainMenu",
-            propertyType: typeof(NavigationPaneItemCollection),
+            propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),
             typeMetadata: new PropertyMetadata(
-                defaultValue: default(NavigationPaneItemCollection)));
+                defaultValue: default(PaneItemCollection)));
 
         #endregion Main Menu Property
 
         #region Bottom Menu Property
 
         [Description("Gets the bottom menu collection for the pane")]
-        public NavigationPaneItemCollection BottomMenu
+        public PaneItemCollection BottomMenu
         {
-            get => (NavigationPaneItemCollection)GetValue(BottomMenuProperty);
+            get => (PaneItemCollection)GetValue(BottomMenuProperty);
             set => SetValue(BottomMenuProperty, value);
         }
 
         private static readonly DependencyProperty BottomMenuProperty = DependencyProperty.Register(
             name: "BottomMenu",
-            propertyType: typeof(NavigationPaneItemCollection),
+            propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),
             typeMetadata: new PropertyMetadata(
-                defaultValue: default(NavigationPaneItemCollection)));
+                defaultValue: default(PaneItemCollection)));
 
         #endregion Bottom Menu Property
 
@@ -291,8 +291,8 @@ namespace DWNavigationPane
 
         public NavigationPane()
         {
-            MainMenu = new NavigationPaneItemCollection();
-            BottomMenu = new NavigationPaneItemCollection();
+            MainMenu = new PaneItemCollection();
+            BottomMenu = new PaneItemCollection();
         }
     }
 }

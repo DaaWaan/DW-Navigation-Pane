@@ -116,13 +116,16 @@
   <ItemGroup>
     <Compile Include="Converters\PercentToRangeConverter.cs" />
     <Compile Include="Converters\ScaleConverter.cs" />
+    <Compile Include="TemplateSelectors\PaneItemTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\INavigationPaneItem.cs" />
-    <Compile Include="DataTypes\NavigationPaneItemCollection.cs" />
+    <Compile Include="DataTypes\IPaneElement.cs" />
+    <Compile Include="DataTypes\IPaneHolder.cs" />
+    <Compile Include="DataTypes\IPaneItem.cs" />
+    <Compile Include="DataTypes\PaneItemCollection.cs" />
     <Compile Include="NavigationPane.cs" />
-    <Compile Include="NavigationPaneItem.cs" />
-    <Compile Include="NavigationPaneHeaderButton.cs" />
+    <Compile Include="PaneButton.cs" />
+    <Compile Include="PaneHeaderButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -156,7 +159,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\NavigationPaneItem.xaml">
+    <Page Include="Themes\PaneButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

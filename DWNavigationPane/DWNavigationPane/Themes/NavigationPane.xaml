@@ -45,6 +45,13 @@
                             </Setter>
                         </Style>
                         <Style TargetType="{x:Type ItemsControl}">
+                            <Style.Resources>
+                                <DataTemplate x:Key="IPaneHolderTemplate">
+                                    <ContentPresenter Content="{Binding PaneElement}" />
+                                </DataTemplate>
+                                <local:PaneItemTemplateSelector x:Key="PaneItemTemplateSelector" ElementHolderTemplate="{StaticResource IPaneHolderTemplate}" />
+                            </Style.Resources>
+                            <Setter Property="ItemTemplateSelector" Value="{StaticResource PaneItemTemplateSelector}" />
                             <Setter Property="ItemsPanel">
                                 <Setter.Value>
                                     <ItemsPanelTemplate>
@@ -52,20 +59,10 @@
                                     </ItemsPanelTemplate>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="ItemTemplate">
-                                <Setter.Value>
-                                    <DataTemplate>
-                                        <local:NavigationPaneItem
-                                            Command="{Binding Command}"
-                                            Content="{Binding Content}"
-                                            Icon="{Binding Icon}" />
-                                    </DataTemplate>
-                                </Setter.Value>
-                            </Setter>
                         </Style>
                     </ControlTemplate.Resources>
                     <DockPanel Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" LastChildFill="True">
-                        <local:NavigationPaneHeaderButton
+                        <local:PaneHeaderButton
                             x:Name="PART_HeaderButton"
                             Content="{Binding Header, RelativeSource={RelativeSource TemplatedParent}}"
                             DockPanel.Dock="Top"

@@ -8,19 +8,19 @@ namespace DWNavigationPane
 {
     /// <summary>
     ///
-    /// NavigationPaneHeaderButton class was created to prevent the Header button from
-    /// being styled in the resources as NavigationPaneItem:
+    /// PaneHeaderButton class was created to prevent the Header button from
+    /// being styled in the resources as PaneButton:
     ///
     /// <--! dwnav:NavigationPane>
     ///     <dwnav:NavigationPane.Resources>
-    ///         <Style TargetType="{x:Type dwnav:NavigationPaneItem}">
+    ///         <Style TargetType="{x:Type dwnav:PaneButton}">
     ///             . . . <!-- All setters here won't affect the header button -->
     ///         </Style>
     ///     </NavigationPane.Resources>
     /// </dwnav:NavigationPane -->
     ///
     /// </summary>
-    internal class NavigationPaneHeaderButton : NavigationPaneItem
+    internal class PaneHeaderButton : PaneButton
     {
     }
 }
