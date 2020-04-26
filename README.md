@@ -11,6 +11,19 @@
     Feel free to contribute to this repository!
 </p>
 
+<div align="center">
+    <img src="Resources/Sample_DWNavigationPane.gif" alt="Sample DWNavigationPane"/>
+</div>
+
+<br/>
+<h2> Features: </h2>
+<ul>
+    <li> Animated extension  —  includes adjustable compact & extended width </li>
+    <li> MVVM-Support for binding pane items to collections </li>
+    <li> Tooltips </li>
+</ul>
+
+<br/>
 <h2> Notice of Non-Affiliation and Disclaimer </h2>
 <p> 
     This control is not affiliated, associated, authorized, endorsed by, or in any way officially connected with MahApps, or any of its subsidiaries or its affiliates. 
