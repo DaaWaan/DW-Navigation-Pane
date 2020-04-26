@@ -56,18 +56,18 @@
             IconSize="18"
             IsExtended="True">
             <dwnav:NavigationPane.Resources>
-                <Style TargetType="{x:Type dwnav:NavigationPaneItem}">
+                <Style TargetType="{x:Type dwnav:PaneButton}">
                     <EventSetter Event="Click" Handler="ItemClick" />
                 </Style>
             </dwnav:NavigationPane.Resources>
             <dwnav:NavigationPane.MainMenu>
-                <dwnav:NavigationPaneItem Content="Home" Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
-                <dwnav:NavigationPaneItem Content="Search" Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
-                <dwnav:NavigationPaneItem Content="Edit" Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
+                <dwnav:PaneButton Content="Home" Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <dwnav:PaneButton Content="Search" Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
+                <dwnav:PaneButton Content="Edit" Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
             </dwnav:NavigationPane.MainMenu>
             <dwnav:NavigationPane.BottomMenu>
-                <dwnav:NavigationPaneItem Content="About" Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
-                <dwnav:NavigationPaneItem Content="Settings" Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
+                <dwnav:PaneButton Content="About" Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
+                <dwnav:PaneButton Content="Settings" Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
             </dwnav:NavigationPane.BottomMenu>
         </dwnav:NavigationPane>
     </Grid>
