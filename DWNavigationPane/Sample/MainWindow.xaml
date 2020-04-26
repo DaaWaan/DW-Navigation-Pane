@@ -16,8 +16,8 @@
         Height="Auto">
 
         <Border
-            MinWidth="450"
-            MinHeight="500"
+            Width="350"
+            Height="400"
             Margin="50,0,0,0">
             <StackPanel
                 HorizontalAlignment="Center"
@@ -44,31 +44,56 @@
         <dwnav:NavigationPane
             x:Name="NavigationPane"
             HorizontalAlignment="Left"
-            Background="#F0363636"
-            BackgroundHover="#363636"
+            BackgroundHover="#10FFFFFF"
             CompactWidth="48"
+            DockPanel.Dock="Left"
             ExtendedWidth="220"
             FontFamily="Century Gothic"
             FontSize="13"
             Foreground="#FFBCBC"
             ForegroundHover="#4CD3C2"
-            Header="THIS IS TRANSLUCENT"
+            Header="MAIN MENU"
             IconSize="18"
-            IsExtended="True">
-            <dwnav:NavigationPane.Resources>
-                <Style TargetType="{x:Type dwnav:PaneButton}">
-                    <EventSetter Event="Click" Handler="ItemClick" />
-                </Style>
-            </dwnav:NavigationPane.Resources>
+            IsExtended="False">
+            <dwnav:NavigationPane.Effect>
+                <DropShadowEffect
+                    BlurRadius="10"
+                    Direction="0"
+                    Opacity="0.7"
+                    ShadowDepth="1" />
+            </dwnav:NavigationPane.Effect>
+            <dwnav:NavigationPane.Background>
+                <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0" Color="#FF241A30" />
+                    <GradientStop Offset="1" Color="#FF753A38" />
+                    <GradientStop Offset="0.5" Color="#FF004144" />
+                </LinearGradientBrush>
+            </dwnav:NavigationPane.Background>
             <dwnav:NavigationPane.MainMenu>
-                <dwnav:PaneButton Content="Home" Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
-                <dwnav:PaneButton Content="Search" Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
-                <dwnav:PaneButton Content="Edit" Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
+                <dwnav:PaneButton
+                    Click="ItemClick"
+                    Content="Home"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <dwnav:PaneButton
+                    Click="ItemClick"
+                    Content="Search"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
+                <dwnav:PaneButton
+                    Click="ItemClick"
+                    Content="Edit"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
             </dwnav:NavigationPane.MainMenu>
             <dwnav:NavigationPane.BottomMenu>
-                <dwnav:PaneButton Content="About" Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
-                <dwnav:PaneButton Content="Settings" Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
+                <dwnav:PaneButton
+                    Click="ItemClick"
+                    Content="About"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
+                <dwnav:PaneButton
+                    Click="ItemClick"
+                    Content="Settings"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
             </dwnav:NavigationPane.BottomMenu>
         </dwnav:NavigationPane>
+
     </Grid>
 </Window>

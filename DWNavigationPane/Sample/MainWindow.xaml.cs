@@ -24,8 +24,11 @@ namespace Sample
         private void ItemClick(object sender, RoutedEventArgs e)
         {
             var Sender = sender as IPaneElement;
-            PageLabel.Text = $"{Sender.Content} Page";
-            PageIcon.Kind = Sender.Icon;
+            if (Sender != null)
+            {
+                PageLabel.Text = $"{Sender.Content} Page";
+                PageIcon.Kind = Sender.Icon;
+            }
         }
 
         public MainWindow()
