@@ -25,11 +25,7 @@ namespace SampleMVVM.ViewModels
         /// </summary>
         public AboutViewModel()
         {
-            paneElement = new DWNavigationPane.PaneButton()
-            {
-                Icon = Icon,
-                Content = DisplayName
-            };
+
         }
 
         private INavigator Navigator { get; }
@@ -40,7 +36,7 @@ namespace SampleMVVM.ViewModels
             {
                 Icon = Icon,
                 Content = DisplayName,
-                Command = new RelayCommand<object>(o => Navigator.SetActivePage(this))
+                Command = new RelayCommand<object>((_) => Navigator.SetActivePage(this))
             };
         }
     }
