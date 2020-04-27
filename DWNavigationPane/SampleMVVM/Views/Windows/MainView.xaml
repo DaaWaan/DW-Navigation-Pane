@@ -46,6 +46,10 @@
                     <Setter Property="BadgeBackground" Value="Red" />
                     <Setter Property="BadgePlacementMode" Value="BottomRight" />
                 </Style>
+                <Style TargetType="{x:Type Separator}">
+                    <Setter Property="Opacity" Value="0.25" />
+                    <Setter Property="Margin" Value="3.5,7,3.5,7" />
+                </Style>
             </dwnav:NavigationPane.Resources>
             <dwnav:NavigationPane.Effect>
                 <DropShadowEffect
