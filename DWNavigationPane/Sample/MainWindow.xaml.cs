@@ -27,7 +27,6 @@ namespace Sample
             if (Sender != null)
             {
                 PageLabel.Text = $"{Sender.Content} Page";
-                PageIcon.Kind = Sender.Icon;
             }
         }
 

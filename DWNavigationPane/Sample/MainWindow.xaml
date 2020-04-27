@@ -21,23 +21,26 @@
             Height="400"
             Margin="50,0,0,0">
             <StackPanel
-                HorizontalAlignment="Center"
+                Margin="40,0,40,0"
                 VerticalAlignment="Center"
                 Orientation="Vertical">
-                <maicons:PackIconControl
-                    x:Name="PageIcon"
-                    Width="200"
-                    Height="200"
-                    Foreground="#B7EFCD"
-                    Kind="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <TextBlock
+                    Foreground="#FF555555"
+                    Text="This is just a TextBlock Control where the Text Property is being set by the clicked button"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap" />
                 <TextBlock
                     x:Name="PageLabel"
-                    Margin="0,14,0,0"
+                    Margin="0,14,0,14"
                     FontFamily="Century Gothic"
                     FontSize="28"
                     FontWeight="Bold"
-                    Foreground="#B7EFCD"
+                    Foreground="Black"
                     Text="Home Page"
+                    TextAlignment="Center" />
+                <TextBlock
+                    Foreground="#FF555555"
+                    Text="Check out the MVVM Sample!"
                     TextAlignment="Center" />
             </StackPanel>
         </Border>
@@ -45,21 +48,23 @@
         <dwnav:NavigationPane
             x:Name="NavigationPane"
             HorizontalAlignment="Left"
-            BackgroundHover="#10FFFFFF"
-            CompactWidth="48"
-            DockPanel.Dock="Left"
-            ExtendedWidth="220"
-            FontFamily="Century Gothic"
-            FontSize="13"
-            Foreground="#FFBCBC"
-            ForegroundHover="#4CD3C2"
-            Header="MAIN MENU"
-            IconSize="18"
-            IsExtended="True">
+            Background="#E00A141F"
+            BackgroundHover="#153131"
+            FontFamily="Montserrat"
+            FontSize="13.5"
+            FontWeight="SemiBold"
+            Foreground="White"
+            ForegroundHover="#17BF63"
+            Header=""
+            IconSize="19"
+            IsExtended="False">
             <dwnav:NavigationPane.Resources>
+                <Style TargetType="{x:Type Separator}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
                 <Style TargetType="{x:Type ma:Badged}">
+                    <Setter Property="BadgeBackground" Value="#17BF63" />
                     <Setter Property="BadgeForeground" Value="White" />
-                    <Setter Property="BadgeBackground" Value="Red" />
                     <Setter Property="BadgePlacementMode" Value="BottomRight" />
                 </Style>
             </dwnav:NavigationPane.Resources>
@@ -70,35 +75,28 @@
                     Opacity="0.7"
                     ShadowDepth="1" />
             </dwnav:NavigationPane.Effect>
-            <dwnav:NavigationPane.Background>
-                <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Offset="0" Color="#FF241A30" />
-                    <GradientStop Offset="1" Color="#FF753A38" />
-                    <GradientStop Offset="0.5" Color="#FF004144" />
-                </LinearGradientBrush>
-            </dwnav:NavigationPane.Background>
             <dwnav:NavigationPane.MainMenu>
-                <dwnav:PaneBadgedButton
-                    Badge="5"
+                <dwnav:PaneButton
                     Click="ItemClick"
                     Content="Home"
                     Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                <dwnav:PaneBadgedButton
+                    Badge="$"
+                    Click="ItemClick"
+                    Content="Transactions"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.ListBoxMD}" />
                 <dwnav:PaneButton
                     Click="ItemClick"
-                    Content="Search"
-                    Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" />
-                <dwnav:PaneButton
-                    Click="ItemClick"
-                    Content="Edit"
-                    Icon="{x:Static maicons:PackIconIoniconsKind.OpeniOS}" />
+                    Content="Reports"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.DocumentiOS}" />
             </dwnav:NavigationPane.MainMenu>
             <dwnav:NavigationPane.BottomMenu>
                 <dwnav:PaneButton
                     Click="ItemClick"
-                    Content="About"
-                    Icon="{x:Static maicons:PackIconIoniconsKind.InformationCircleOutlineiOS}" />
+                    Content="Help"
+                    Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}" />
                 <dwnav:PaneBadgedButton
-                    Badge="1"
+                    Badge="!"
                     Click="ItemClick"
                     Content="Settings"
                     Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
