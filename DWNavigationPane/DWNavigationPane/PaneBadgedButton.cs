@@ -32,7 +32,7 @@ namespace DWNavigationPane
             set => SetValue(BadgeProperty, value);
         }
 
-        protected static readonly DependencyProperty BadgeProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty BadgeProperty = DependencyProperty.Register(
             name: "Badge",
             propertyType: typeof(object),
             ownerType: typeof(PaneBadgedButton),

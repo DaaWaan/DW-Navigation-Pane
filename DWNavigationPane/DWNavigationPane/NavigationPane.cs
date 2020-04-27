@@ -23,7 +23,7 @@ namespace DWNavigationPane
             internal set => SetValue(ExtensionScaleProperty, value);
         }
 
-        public static readonly DependencyProperty ExtensionScaleProperty = DependencyProperty.Register(
+        protected static readonly DependencyProperty ExtensionScaleProperty = DependencyProperty.Register(
             name: "ExtensionScale",
             propertyType: typeof(double),
             ownerType: typeof(NavigationPane),
@@ -42,7 +42,7 @@ namespace DWNavigationPane
             set => SetValue(HeaderProperty, value);
         }
 
-        protected static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(
             name: "Header",
             propertyType: typeof(object),
             ownerType: typeof(NavigationPane),
@@ -61,7 +61,7 @@ namespace DWNavigationPane
             set => SetValue(HeaderIconProperty, value);
         }
 
-        protected static readonly DependencyProperty HeaderIconProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty HeaderIconProperty = DependencyProperty.Register(
             name: "HeaderIcon",
             propertyType: typeof(Enum),
             ownerType: typeof(NavigationPane),
@@ -229,7 +229,7 @@ namespace DWNavigationPane
             set => SetValue(MainMenuProperty, value);
         }
 
-        private static readonly DependencyProperty MainMenuProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty MainMenuProperty = DependencyProperty.Register(
             name: "MainMenu",
             propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),
@@ -247,7 +247,7 @@ namespace DWNavigationPane
             set => SetValue(BottomMenuProperty, value);
         }
 
-        private static readonly DependencyProperty BottomMenuProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty BottomMenuProperty = DependencyProperty.Register(
             name: "BottomMenu",
             propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),

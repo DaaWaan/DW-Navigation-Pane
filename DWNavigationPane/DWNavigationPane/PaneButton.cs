@@ -20,7 +20,7 @@ namespace DWNavigationPane
             set => SetValue(IconProperty, value);
         }
 
-        protected static readonly DependencyProperty IconProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
             name: "Icon",
             propertyType: typeof(Enum),
             ownerType: typeof(PaneButton),
@@ -43,7 +43,7 @@ namespace DWNavigationPane
             set => SetValue(IconSizeProperty, value);
         }
 
-        protected static readonly DependencyProperty IconSizeProperty;
+        public static readonly DependencyProperty IconSizeProperty;
 
         #endregion IconSize Property
 
@@ -57,7 +57,7 @@ namespace DWNavigationPane
             set => SetValue(IsExtendedProperty, value);
         }
 
-        protected static readonly DependencyProperty IsExtendedProperty;
+        public static readonly DependencyProperty IsExtendedProperty;
 
         #endregion IsExtended Property
 
@@ -71,7 +71,7 @@ namespace DWNavigationPane
             set => SetValue(CompactWidthProperty, value);
         }
 
-        protected static readonly DependencyProperty CompactWidthProperty;
+        public static readonly DependencyProperty CompactWidthProperty;
 
         #endregion CompactWidth Property
 
@@ -85,7 +85,7 @@ namespace DWNavigationPane
             set => SetValue(ExtendedWidthProperty, value);
         }
 
-        protected static readonly DependencyProperty ExtendedWidthProperty;
+        public static readonly DependencyProperty ExtendedWidthProperty;
 
         #endregion ExtendedWidth Property
 
@@ -98,7 +98,7 @@ namespace DWNavigationPane
             set => SetValue(BackgroundHoverProperty, value);
         }
 
-        protected static readonly DependencyProperty BackgroundHoverProperty;
+        public static readonly DependencyProperty BackgroundHoverProperty;
 
         #endregion BackgroundHover Property
 
@@ -111,7 +111,7 @@ namespace DWNavigationPane
             set => SetValue(ForegroundHoverProperty, value);
         }
 
-        protected static readonly DependencyProperty ForegroundHoverProperty;
+        public static readonly DependencyProperty ForegroundHoverProperty;
 
         #endregion ForegroundHover Property
 
