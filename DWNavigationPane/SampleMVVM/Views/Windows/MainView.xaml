@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dwnav="clr-namespace:DWNavigationPane;assembly=DWNavigationPane"
     xmlns:local="clr-namespace:SampleMVVM"
+    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sample MVVM"
@@ -39,6 +40,13 @@
             IconSize="18"
             IsExtended="False"
             MainMenu="{Binding MainMenuPages}">
+            <dwnav:NavigationPane.Resources>
+                <Style TargetType="{x:Type ma:Badged}">
+                    <Setter Property="BadgeForeground" Value="White" />
+                    <Setter Property="BadgeBackground" Value="Red" />
+                    <Setter Property="BadgePlacementMode" Value="BottomRight" />
+                </Style>
+            </dwnav:NavigationPane.Resources>
             <dwnav:NavigationPane.Effect>
                 <DropShadowEffect
                     BlurRadius="10"

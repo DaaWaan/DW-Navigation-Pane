@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SampleMVVM.Views"
+    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:SampleMVVM.ViewModels"
@@ -24,12 +25,21 @@
             Kind="{Binding Icon}" />
         <TextBlock
             x:Name="PageLabel"
-            Margin="0,14,0,0"
+            Margin="0,14,0,14"
             FontFamily="Century Gothic"
             FontSize="28"
             FontWeight="Bold"
             Foreground="#B7EFCD"
             Text="{Binding Text}"
             TextAlignment="Center" />
+        <ma:NumericUpDown
+            ma:TextBoxHelper.AutoWatermark="True"
+            ma:TextBoxHelper.Watermark="Empty"
+            ma:TextBoxHelper.WatermarkAlignment="Right"
+            Foreground="Black"
+            HasDecimals="False"
+            Minimum="0"
+            NumericInputMode="Numbers"
+            Value="{Binding Badge}" />
     </StackPanel>
 </UserControl>
