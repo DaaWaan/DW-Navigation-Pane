@@ -22,30 +22,36 @@
                                 x:Name="PART_Badge"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Badge="{Binding Badge, RelativeSource={RelativeSource TemplatedParent}}">
+                                Badge="{Binding Badge, RelativeSource={RelativeSource TemplatedParent}}"
+                                RenderTransformOrigin="0.5,0.5">
+                                <ma:Badged.RenderTransform>
+                                    <ScaleTransform ScaleX="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}, Converter={local:ScaleFractionConverter Numerator=1, Denominator=18}}" ScaleY="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}, Converter={local:ScaleFractionConverter Numerator=1, Denominator=18}}" />
+                                </ma:Badged.RenderTransform>
                                 <ma:Badged.BadgeChangedStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.4" />
-                                            <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.8">
-                                                <EasingDoubleKeyFrame.EasingFunction>
-                                                    <BackEase EasingMode="EaseOut" />
-                                                </EasingDoubleKeyFrame.EasingFunction>
-                                            </EasingDoubleKeyFrame>
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0.4" />
-                                            <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.8">
-                                                <EasingDoubleKeyFrame.EasingFunction>
-                                                    <BackEase EasingMode="EaseOut" />
-                                                </EasingDoubleKeyFrame.EasingFunction>
-                                            </EasingDoubleKeyFrame>
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            From="0.4"
+                                            To="0.8"
+                                            Duration="0:0:0.3">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            From="0.4"
+                                            To="0.8"
+                                            Duration="0:0:0.3">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
                                     </Storyboard>
                                 </ma:Badged.BadgeChangedStoryboard>
                                 <maicons:PackIconControl
-                                    Width="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}}"
-                                    Height="{Binding IconSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Width="18"
+                                    Height="18"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Kind="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}" />

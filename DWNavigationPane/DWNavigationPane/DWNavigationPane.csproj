@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\PercentToRangeConverter.cs" />
+    <Compile Include="Converters\ScaleFractionConverter.cs" />
     <Compile Include="Converters\ScaleConverter.cs" />
     <Compile Include="PaneBadgedButton.cs" />
     <Compile Include="TemplateSelectors\PaneItemTemplateSelector.cs" />

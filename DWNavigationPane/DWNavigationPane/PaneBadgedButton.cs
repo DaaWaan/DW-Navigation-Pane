@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -36,7 +37,7 @@ namespace DWNavigationPane
             name: "Badge",
             propertyType: typeof(object),
             ownerType: typeof(PaneBadgedButton),
-            typeMetadata: new PropertyMetadata(
+            typeMetadata: new FrameworkPropertyMetadata(
                 defaultValue: default));
 
         #endregion Badge Property
@@ -51,7 +52,6 @@ namespace DWNavigationPane
 
         private void PaneBadgedButton_Loaded(object sender, RoutedEventArgs e)
         {
-            // Trigger OnBadge Change
             var tempBadge = Badge;
             Badge = 0;
             Badge = tempBadge;
