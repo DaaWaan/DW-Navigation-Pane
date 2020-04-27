@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -233,7 +234,7 @@ namespace DWNavigationPane
             propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),
             typeMetadata: new PropertyMetadata(
-                defaultValue: default(PaneItemCollection)));
+                defaultValue: new PaneItemCollection()));
 
         #endregion Main Menu Property
 
@@ -251,7 +252,7 @@ namespace DWNavigationPane
             propertyType: typeof(PaneItemCollection),
             ownerType: typeof(NavigationPane),
             typeMetadata: new PropertyMetadata(
-                defaultValue: default(PaneItemCollection)));
+                defaultValue: new PaneItemCollection()));
 
         #endregion Bottom Menu Property
 

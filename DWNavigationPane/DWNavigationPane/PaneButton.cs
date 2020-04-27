@@ -13,7 +13,7 @@ namespace DWNavigationPane
         #region Icon Property
 
         [Category("Common")]
-        [Description("Gets or sets the icon of the header from the MahApps Metro IconPacks.\n\nUsage in XAML Example: {x:Static maicons:PackIconEvaIconsKind.Menu}")]
+        [Description("Gets or sets the icon of the item from the MahApps Metro IconPacks.\n\nUsage in XAML Example: {x:Static maicons:PackIconEvaIconsKind.Menu}")]
         public Enum Icon
         {
             get => (Enum)GetValue(IconProperty);
