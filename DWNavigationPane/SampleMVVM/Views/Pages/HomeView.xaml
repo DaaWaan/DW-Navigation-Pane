@@ -34,9 +34,8 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             LastChildFill="True">
-            <Separator Margin="0,0,0,7.5" DockPanel.Dock="Top" />
             <StackPanel
-                Margin="15,7.5,15,7.5"
+                Margin="15"
                 DockPanel.Dock="Top"
                 Orientation="Vertical">
                 <Grid MaxWidth="400">
@@ -60,9 +59,9 @@
                         Value="{Binding Badge}" />
                 </Grid>
             </StackPanel>
-            <Separator Margin="0,7.5,0,7.5" DockPanel.Dock="Top" />
+            <Separator DockPanel.Dock="Top" />
             <Grid
-                Margin="15,7.5,15,7.5"
+                Margin="15"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch">
                 <maicons:PackIconControl

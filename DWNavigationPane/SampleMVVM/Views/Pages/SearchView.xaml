@@ -8,22 +8,29 @@
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:SampleMVVM.ViewModels"
+    Padding="15"
     d:DataContext="{d:DesignInstance vm:SearchViewModel,
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="400"
     d:DesignWidth="350"
     Background="White"
     mc:Ignorable="d">
-    <Grid Margin="15">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <DockPanel
-            Height="26"
-            Margin="0,0,0,15"
-            LastChildFill="True">
-            <Border Width="26" Height="26">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border
+                Grid.Row="0"
+                Grid.Column="0"
+                Width="26"
+                Height="26"
+                Margin="0,0,2.5,0">
                 <maicons:PackIconIonicons
                     Width="15"
                     Height="15"
@@ -32,16 +39,19 @@
                     Foreground="#777777"
                     Kind="SearchiOS" />
             </Border>
-            <TextBox Margin="2.5,0,0,0" ma:TextBoxHelper.Watermark="Filename" />
-        </DockPanel>
+            <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                ma:TextBoxHelper.Watermark="Filename" />
+        </Grid>
         <DataGrid
             Grid.Row="1"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"
+            Grid.Column="1"
+            Margin="0,15,0,0"
             BorderBrush="Gray"
             BorderThickness="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="#TN" />
+                <DataGridTextColumn Width="Auto" Header="#TN" />
                 <DataGridTextColumn Width="*" Header="Filename" />
             </DataGrid.Columns>
         </DataGrid>

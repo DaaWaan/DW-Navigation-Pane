@@ -7,19 +7,21 @@
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:SampleMVVM.ViewModels"
+    Padding="15"
     d:DataContext="{d:DesignInstance vm:AboutViewModel,
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="400"
     d:DesignWidth="350"
     Background="White"
     mc:Ignorable="d">
-    <RichTextBox
-        Margin="15"
-        Padding="7"
-        FontFamily="Segoe UI"
-        FontSize="11">
-        <FlowDocument>
-            <Paragraph>More controls coming soon!</Paragraph>
-        </FlowDocument>
-    </RichTextBox>
+    <Grid>
+        <Border
+            Padding="7"
+            BorderBrush="Gray"
+            BorderThickness="1">
+            <TextBlock TextWrapping="Wrap">
+                This is a sample design supporting the MVVM-Pattern that uses the NavigationPane Control.
+            </TextBlock>
+        </Border>
+    </Grid>
 </UserControl>

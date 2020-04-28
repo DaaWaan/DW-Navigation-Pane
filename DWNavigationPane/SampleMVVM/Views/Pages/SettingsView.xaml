@@ -33,9 +33,9 @@
                 Foreground="#E9E9E9"
                 Kind="{Binding Icon}" />
         </Grid>
-        <Separator Margin="0,0,0,7.5" DockPanel.Dock="Top" />
+        <Separator DockPanel.Dock="Top" />
         <StackPanel
-            Margin="15,7.5,15,7.5"
+            Margin="15"
             DockPanel.Dock="Top"
             Orientation="Vertical">
             <Grid MaxWidth="400">
