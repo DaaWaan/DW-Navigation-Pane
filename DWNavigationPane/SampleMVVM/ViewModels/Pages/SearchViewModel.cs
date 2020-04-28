@@ -1,4 +1,5 @@
-﻿using SampleMVVM.DataTypes;
+﻿using DWNavigationPane;
+using SampleMVVM.DataTypes;
 using SampleMVVM.Helpers;
 using SampleMVVM.Models;
 using System;
@@ -13,12 +14,9 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "Search";
 
-        public string Text => $"{DisplayName} Page";
-
         public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.SearchiOS;
 
-        private DWNavigationPane.IPaneElement paneElement;
-        public DWNavigationPane.IPaneElement PaneElement => paneElement;
+        public IPaneElement PaneElement { get; }
 
         /// <summary>
         /// For Design-time support
@@ -32,7 +30,7 @@ namespace SampleMVVM.ViewModels
         public SearchViewModel(INavigator navigator)
         {
             Navigator = navigator;
-            paneElement = new DWNavigationPane.PaneButton()
+            PaneElement = new PaneButton()
             {
                 Icon = Icon,
                 Content = DisplayName,

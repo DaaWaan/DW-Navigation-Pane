@@ -12,6 +12,5 @@ namespace SampleMVVM.DataTypes
     {
         Enum Icon { get; }
         string DisplayName { get; }
-        string Text { get; }
     }
 }

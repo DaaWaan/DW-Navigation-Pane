@@ -15,12 +15,9 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "Settings";
 
-        public string Text => $"{DisplayName} Page";
-
         public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.SettingsiOS;
 
-        private IPaneElement paneElement;
-        public IPaneElement PaneElement => paneElement;
+        public IPaneElement PaneElement { get; }
 
         private uint? badge;
         public uint? Badge
@@ -50,7 +47,7 @@ namespace SampleMVVM.ViewModels
             };
             badgedButton.SetBinding(PaneBadgedButton.BadgeProperty, new Binding("Badge"));
             Badge = 1;
-            paneElement = badgedButton;
+            PaneElement = badgedButton;
         }
     }
 }

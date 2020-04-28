@@ -10,26 +10,16 @@
     d:DataContext="{d:DesignInstance vm:AboutViewModel,
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="400"
-    d:DesignWidth="400"
+    d:DesignWidth="350"
+    Background="White"
     mc:Ignorable="d">
-    <StackPanel
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Orientation="Vertical">
-        <maicons:PackIconControl
-            x:Name="PageIcon"
-            Width="200"
-            Height="200"
-            Foreground="#B7EFCD"
-            Kind="{Binding Icon}" />
-        <TextBlock
-            x:Name="PageLabel"
-            Margin="0,14,0,0"
-            FontFamily="Century Gothic"
-            FontSize="28"
-            FontWeight="Bold"
-            Foreground="#B7EFCD"
-            Text="{Binding Text}"
-            TextAlignment="Center" />
-    </StackPanel>
+    <RichTextBox
+        Margin="15"
+        Padding="7"
+        FontFamily="Segoe UI"
+        FontSize="10.3">
+        <FlowDocument>
+            <Paragraph>More controls coming soon!</Paragraph>
+        </FlowDocument>
+    </RichTextBox>
 </UserControl>

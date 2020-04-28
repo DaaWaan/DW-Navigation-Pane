@@ -1,4 +1,5 @@
-﻿using SampleMVVM.DataTypes;
+﻿using DWNavigationPane;
+using SampleMVVM.DataTypes;
 using SampleMVVM.Helpers;
 using SampleMVVM.Models;
 using System;
@@ -13,12 +14,9 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "About";
 
-        public string Text => $"{DisplayName} Page";
-
         public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.InformationCircleOutlineiOS;
 
-        private DWNavigationPane.IPaneElement paneElement;
-        public DWNavigationPane.IPaneElement PaneElement => paneElement;
+        public IPaneElement PaneElement { get; }
 
         /// <summary>
         /// For Design-time support
@@ -32,7 +30,7 @@ namespace SampleMVVM.ViewModels
         public AboutViewModel(INavigator navigator)
         {
             Navigator = navigator;
-            paneElement = new DWNavigationPane.PaneButton()
+            PaneElement = new DWNavigationPane.PaneButton()
             {
                 Icon = Icon,
                 Content = DisplayName,

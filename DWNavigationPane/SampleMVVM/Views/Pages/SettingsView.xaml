@@ -11,35 +11,53 @@
     d:DataContext="{d:DesignInstance vm:SettingsViewModel,
                                      IsDesignTimeCreatable=True}"
     d:DesignHeight="400"
-    d:DesignWidth="400"
+    d:DesignWidth="350"
+    Background="White"
     mc:Ignorable="d">
-    <StackPanel
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Orientation="Vertical">
-        <maicons:PackIconControl
-            x:Name="PageIcon"
-            Width="200"
-            Height="200"
-            Foreground="#B7EFCD"
-            Kind="{Binding Icon}" />
-        <TextBlock
-            x:Name="PageLabel"
-            Margin="0,14,0,14"
-            FontFamily="Century Gothic"
-            FontSize="28"
-            FontWeight="Bold"
-            Foreground="#B7EFCD"
-            Text="{Binding Text}"
-            TextAlignment="Center" />
-        <ma:NumericUpDown
-            ma:TextBoxHelper.AutoWatermark="True"
-            ma:TextBoxHelper.Watermark="Empty"
-            ma:TextBoxHelper.WatermarkAlignment="Right"
-            Foreground="Black"
-            HasDecimals="False"
-            Minimum="0"
-            NumericInputMode="Numbers"
-            Value="{Binding Badge}" />
-    </StackPanel>
+    <DockPanel
+        Grid.Row="1"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch"
+        LastChildFill="True">
+        <Grid
+            Margin="30"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            DockPanel.Dock="Top">
+            <maicons:PackIconControl
+                x:Name="PageIcon"
+                Width="100"
+                Height="100"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="#E9E9E9"
+                Kind="{Binding Icon}" />
+        </Grid>
+        <Separator Margin="0,0,0,7.5" DockPanel.Dock="Top" />
+        <StackPanel
+            Margin="15,7.5,15,7.5"
+            DockPanel.Dock="Top"
+            Orientation="Vertical">
+            <Grid MaxWidth="400">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    VerticalAlignment="Center"
+                    Text="Button Badge Value" />
+                <ma:NumericUpDown
+                    Grid.Column="1"
+                    ma:TextBoxHelper.AutoWatermark="True"
+                    ma:TextBoxHelper.Watermark="Empty"
+                    ma:TextBoxHelper.WatermarkAlignment="Right"
+                    Foreground="Black"
+                    HasDecimals="False"
+                    Minimum="0"
+                    NumericInputMode="Numbers"
+                    Value="{Binding Badge}" />
+            </Grid>
+        </StackPanel>
+    </DockPanel>
 </UserControl>
