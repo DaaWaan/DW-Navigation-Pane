@@ -11,9 +11,8 @@
     Feel free to contribute to this repository!
 </p>
 
-<div align="center">
-    <img src="Resources/Sample_DWNavigationPane.gif" alt="Sample DWNavigationPane"/>
-</div>
+
+![](Resources/Sample.gif) ![](Resources/SampleMVVM.gif)
 
 <br/>
 <h2> Features: </h2>
