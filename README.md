@@ -11,8 +11,10 @@
     Feel free to contribute to this repository!
 </p>
 
-
-![](Resources/Sample.gif) ![](Resources/SampleMVVM.gif)
+<div align="center">
+    <img src="Resources/Sample.gif" alt="Sample"/>
+    <img src="Resources/SampleMVVM.gif" alt="Sample"/>
+</div>
 
 <br/>
 <h2> Features: </h2>
