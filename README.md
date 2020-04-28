@@ -13,13 +13,14 @@
 
 <div align="center">
     <img src="Resources/Sample.gif" alt="Sample"/>
-    <img src="Resources/SampleMVVM.gif" alt="Sample"/>
+    <img src="Resources/SampleMVVM.gif" alt="SampleMVVM"/>
 </div>
 
 <br/>
 <h2> Features: </h2>
 <ul>
     <li> Animated extension  —  includes adjustable compact & extended width </li>
+    <li> Badged Items
     <li> MVVM-Support for binding pane items to collections </li>
     <li> Tooltips </li>
 </ul>
