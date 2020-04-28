@@ -20,10 +20,9 @@
             <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <Image
-                Source="/SampleMVVM;component/Resources/canyon-1740973_1920.jpg"
-                Stretch="UniformToFill"
-                StretchDirection="Both" />
+            <Grid.Background>
+                <ImageBrush ImageSource="/SampleMVVM;component/Resources/canyon-1740973_1920.jpg" Stretch="UniformToFill" />
+            </Grid.Background>
             <TextBlock
                 Margin="15"
                 VerticalAlignment="Bottom"

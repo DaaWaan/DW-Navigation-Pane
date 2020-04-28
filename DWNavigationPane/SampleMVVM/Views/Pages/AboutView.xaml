@@ -17,7 +17,7 @@
         Margin="15"
         Padding="7"
         FontFamily="Segoe UI"
-        FontSize="10.3">
+        FontSize="11">
         <FlowDocument>
             <Paragraph>More controls coming soon!</Paragraph>
         </FlowDocument>
