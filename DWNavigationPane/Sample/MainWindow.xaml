@@ -9,17 +9,13 @@
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Sample"
+    Width="400"
+    Height="400"
     SizeToContent="WidthAndHeight"
     mc:Ignorable="d">
-    <Grid
-        x:Name="BaseGrid"
-        Width="Auto"
-        Height="Auto">
+    <Grid>
 
-        <Border
-            Width="350"
-            Height="400"
-            Margin="50,0,0,0">
+        <Border Margin="50,0,0,0">
             <StackPanel
                 Margin="40,0,40,0"
                 VerticalAlignment="Center"
@@ -55,7 +51,8 @@
             FontWeight="SemiBold"
             Foreground="White"
             ForegroundHover="#17BF63"
-            Header=""
+            Header="{x:Null}"
+            HeaderIcon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
             IconSize="19"
             IsExtended="False">
             <dwnav:NavigationPane.Resources>
@@ -79,7 +76,7 @@
                 <dwnav:PaneButton
                     Click="ItemClick"
                     Content="Home"
-                    Icon="{x:Static maicons:PackIconIoniconsKind.HomeiOS}" />
+                    Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}" />
                 <dwnav:PaneBadgedButton
                     Badge="$"
                     Click="ItemClick"
@@ -99,7 +96,7 @@
                     Badge="!"
                     Click="ItemClick"
                     Content="Settings"
-                    Icon="{x:Static maicons:PackIconIoniconsKind.SettingsiOS}" />
+                    Icon="{x:Static maicons:PackIconIoniconsKind.SettingsMD}" />
             </dwnav:NavigationPane.BottomMenu>
         </dwnav:NavigationPane>
 
