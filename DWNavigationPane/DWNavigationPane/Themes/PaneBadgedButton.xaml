@@ -5,13 +5,11 @@
     xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks">
 
-    <Style TargetType="{x:Type local:PaneBadgedButton}">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DWNavigationPane;component/Themes/PaneButton.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
-        <Setter Property="Height" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Icon" Value="{x:Static maicons:PackIconFeatherIconsKind.Smile}" />
-        <Setter Property="Content" Value="Hello" />
-        <Setter Property="ToolTip" Value="{Binding Content, RelativeSource={RelativeSource Self}}" />
+    <Style BasedOn="{StaticResource {x:Type local:PaneButton}}" TargetType="{x:Type local:PaneBadgedButton}">
 
         <Setter Property="Template">
             <Setter.Value>
@@ -63,14 +61,5 @@
             </Setter.Value>
         </Setter>
 
-        <Style.Triggers>
-            <DataTrigger Binding="{Binding IsExtended, RelativeSource={RelativeSource Self}}" Value="True">
-                <Setter Property="ToolTipService.IsEnabled" Value="False" />
-            </DataTrigger>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{Binding BackgroundHover, RelativeSource={RelativeSource Self}}" />
-                <Setter Property="Foreground" Value="{Binding ForegroundHover, RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>
