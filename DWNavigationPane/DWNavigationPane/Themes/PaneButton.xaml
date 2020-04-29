@@ -31,9 +31,12 @@
         </Setter>
 
         <Style.Triggers>
-            <DataTrigger Binding="{Binding IsExtended, RelativeSource={RelativeSource Self}}" Value="True">
+            <Trigger Property="IsExtended" Value="True">
                 <Setter Property="ToolTipService.IsEnabled" Value="False" />
-            </DataTrigger>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{Binding BackgroundHover, RelativeSource={RelativeSource Self}}" />
                 <Setter Property="Foreground" Value="{Binding ForegroundHover, RelativeSource={RelativeSource Self}}" />
