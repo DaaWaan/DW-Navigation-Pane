@@ -97,6 +97,5 @@
                     Icon="{x:Static maicons:PackIconIoniconsKind.SettingsMD}" />
             </dwnav:NavigationPane.BottomMenu>
         </dwnav:NavigationPane>
-
     </Grid>
 </Window>

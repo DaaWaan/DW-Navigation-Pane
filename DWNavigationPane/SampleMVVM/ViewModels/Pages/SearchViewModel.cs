@@ -3,14 +3,10 @@ using SampleMVVM.DataTypes;
 using SampleMVVM.Helpers;
 using SampleMVVM.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SampleMVVM.ViewModels
 {
-    class SearchViewModel : PropertyChangedBase, IPage
+    internal class SearchViewModel : PropertyChangedBase, IPage
     {
         public string DisplayName => "Search";
 
@@ -23,10 +19,10 @@ namespace SampleMVVM.ViewModels
         /// </summary>
         public SearchViewModel()
         {
-
         }
 
         private INavigator Navigator { get; }
+
         public SearchViewModel(INavigator navigator)
         {
             Navigator = navigator;

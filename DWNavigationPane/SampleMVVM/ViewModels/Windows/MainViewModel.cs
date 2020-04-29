@@ -1,22 +1,14 @@
-﻿using DWNavigationPane;
-using SampleMVVM.DataTypes;
+﻿using SampleMVVM.DataTypes;
 using SampleMVVM.Helpers;
 using SampleMVVM.Models;
 using SampleMVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
 
 namespace SampleMVVM
 {
-    class MainViewModel : PropertyChangedBase
+    internal class MainViewModel : PropertyChangedBase
     {
         private Navigator navigator = new Navigator();
+
         public Navigator Navigator
         {
             get => navigator;
@@ -26,6 +18,7 @@ namespace SampleMVVM
         private PageCollection Pages = new PageCollection();
 
         private DWNavigationPane.PaneItemCollection mainMenuPages = new DWNavigationPane.PaneItemCollection();
+
         public DWNavigationPane.PaneItemCollection MainMenuPages
         {
             get => mainMenuPages;
@@ -33,6 +26,7 @@ namespace SampleMVVM
         }
 
         private DWNavigationPane.PaneItemCollection bottomMenuPages = new DWNavigationPane.PaneItemCollection();
+
         public DWNavigationPane.PaneItemCollection BottomMenuPages
         {
             get => bottomMenuPages;

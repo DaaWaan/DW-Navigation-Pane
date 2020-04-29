@@ -3,15 +3,11 @@ using SampleMVVM.DataTypes;
 using SampleMVVM.Helpers;
 using SampleMVVM.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace SampleMVVM.ViewModels
 {
-    class SettingsViewModel : PropertyChangedBase, IPage
+    internal class SettingsViewModel : PropertyChangedBase, IPage
     {
         public string DisplayName => "Settings";
 
@@ -20,6 +16,7 @@ namespace SampleMVVM.ViewModels
         public IPaneElement PaneElement { get; }
 
         private uint? badge;
+
         public uint? Badge
         {
             get => (badge != 0) ? badge : null;
@@ -31,7 +28,6 @@ namespace SampleMVVM.ViewModels
         /// </summary>
         public SettingsViewModel()
         {
-
         }
 
         private INavigator Navigator { get; }
