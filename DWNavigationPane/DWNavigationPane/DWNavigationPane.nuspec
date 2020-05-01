@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+
+    <!-- Required elements-->
+    <id>$id$</id>
+
+    <version>1.0.0.1</version>
+    <!--<version>$version$</version>-->
+
+    <description>$description$</description>
+    <authors>$author$</authors>
+
+    <!-- Optional elements -->
+    <owners>$author$</owners>
+    <projectUrl>https://github.com/DaaWaan/DW-Navigation-Pane</projectUrl>
+    <title>$title$</title>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <releaseNotes>First release of the DWNavigationPane. Visit the project URL!</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>C# WPF MahApps.Metro MahApps.Metro.IconPacks CustomControls NavigationPane</tags>
+
+    <!-- Collection elements-->
+    <dependencies>
+      <dependency id="ControlzEx" version="3.0.2.4" />
+      <dependency id="MahApps.Metro" version="1.6.5" />
+      <dependency id="MahApps.Metro.IconPacks" version="4.0.0" />
+    </dependencies>
+
+  </metadata>
+</package>
