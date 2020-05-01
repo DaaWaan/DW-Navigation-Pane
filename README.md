@@ -1,5 +1,5 @@
 <div align="center">
-    <h1> MahApps.Metro-based NavigationPane </h1>
+    <h1> DW Navigation Pane </h1>
     <p> A Navigation Pane that implements MahApps Metro Controls and Icon Pack. </p>
     <p> Supporting WPF .NET Framework (4.5.2+)
 </div>
