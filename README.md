@@ -1,4 +1,5 @@
 <div align="center">
+    <img width="300" height="300" src="Resources/Icon.svg" alt="Icon"/>
     <h1> DW Navigation Pane </h1>
     <p> A Navigation Pane that implements MahApps Metro Controls and Icon Pack. </p>
     <p> Supporting WPF .NET Framework (4.5.2+)
