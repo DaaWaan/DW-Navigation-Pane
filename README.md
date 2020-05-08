@@ -6,7 +6,7 @@
 </div>
 
 <br/>
-<p> Was initially made as a simple alternative to the MahApps Metro Hamburger Menu. I don't have much time to learn how to contribute to the official MahApps.Metro in the meantime to add functionality instead for the Hamburger Menu control. 
+<p> DW Navigation Pane was initially made as a simple alternative to the MahApps Metro Hamburger Menu. I don't have much time to learn how to contribute to the official MahApps.Metro in the meantime to add functionality instead for the Hamburger Menu control. 
     Feel free to submit issues and contribute to this repository!
 </p>
 
