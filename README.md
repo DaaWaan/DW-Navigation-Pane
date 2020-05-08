@@ -6,10 +6,8 @@
 </div>
 
 <br/>
-<p> This custom control was made for my personal use for projects as an alternative to the MahApps Metro Hamburger Menu. 
-    The official MahApps Metro Hamburger Menu currently doesn't have an animation for extending so I made this custom control instead.
-    I don't have much time to learn how to contribute to the official MahApps.Metro in the meantime to add functionality for the Hamburger Menu control. 
-    Feel free to contribute to this repository!
+<p> Was initially made as a simple alternative to the MahApps Metro Hamburger Menu. I don't have much time to learn how to contribute to the official MahApps.Metro in the meantime to add functionality instead for the Hamburger Menu control. 
+    Feel free to submit issues and contribute to this repository!
 </p>
 
 <div align="center">
