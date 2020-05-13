@@ -1,14 +1,14 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:DWNavigationPane"
-    xmlns:converters="clr-namespace:DWNavigationPane.Converters">
+    xmlns:converters="clr-namespace:DWNavigationPane.Converters"
+    xmlns:local="clr-namespace:DWNavigationPane">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type local:ExtendingPane}" BasedOn="{StaticResource {x:Type local:AnimatedPane}}">
+    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:ExtendingPane}">
         <Style.Resources>
             <converters:PercentToRangeConverter x:Key="PercentToRangeConverter" />
         </Style.Resources>

@@ -8,16 +8,24 @@
 
         <Style.Resources>
             <ControlTemplate x:Key="Default_Template" TargetType="{x:Type ButtonBase}">
-                <StackPanel Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Orientation="Horizontal">
-                    <local:PaneIcon
-                        local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
-                        local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
-                        local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}" />
-                    <ContentPresenter VerticalAlignment="Center" />
-                </StackPanel>
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <StackPanel Orientation="Horizontal">
+                        <local:PaneIcon
+                            local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
+                            local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
+                            local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}" />
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
             </ControlTemplate>
             <ControlTemplate x:Key="IsIconOnly_Template" TargetType="{x:Type ButtonBase}">
-                <Border Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}">
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
                     <local:PaneIcon
                         local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
                         local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"

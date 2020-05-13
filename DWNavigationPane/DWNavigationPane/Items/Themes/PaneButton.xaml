@@ -7,6 +7,5 @@
         <ResourceDictionary Source="/DWNavigationPane;component/Items/Themes/PaneButtonBase.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type local:PaneButton}" BasedOn="{StaticResource PaneButtonBase}">
-    </Style>
+    <Style BasedOn="{StaticResource PaneButtonBase}" TargetType="{x:Type local:PaneButton}" />
 </ResourceDictionary>

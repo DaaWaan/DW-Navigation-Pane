@@ -1,9 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:DWNavigationPane"
-                    xmlns:converter="clr-namespace:DWNavigationPane.Converters"
-                    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
-                    xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converter="clr-namespace:DWNavigationPane.Converters"
+    xmlns:local="clr-namespace:DWNavigationPane"
+    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks">
 
     <Style TargetType="{x:Type local:PaneIcon}">
 
@@ -16,7 +17,7 @@
                         Height="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}}"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Kind="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"/>
+                        Kind="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}" />
                 </Border>
             </ControlTemplate>
             <ControlTemplate x:Key="IsBadged_Template" TargetType="{x:Type local:PaneIcon}">
@@ -24,14 +25,12 @@
                     <ma:Badged
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        RenderTransformOrigin="0.5,0.5"
+                        Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
                         BadgeForeground="White"
                         BadgePlacementMode="BottomRight"
-                        Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}">
+                        RenderTransformOrigin="0.5,0.5">
                         <ma:Badged.RenderTransform>
-                            <ScaleTransform
-                                ScaleX="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}"
-                                ScaleY="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}" />
+                            <ScaleTransform ScaleX="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}" ScaleY="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}" />
                         </ma:Badged.RenderTransform>
                         <ma:Badged.BadgeChangedStoryboard>
                             <Storyboard>
@@ -60,7 +59,7 @@
                             Height="18"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Kind="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"/>
+                            Kind="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}" />
                     </ma:Badged>
                 </Border>
             </ControlTemplate>
@@ -68,7 +67,7 @@
 
         <Setter Property="Height" Value="{Binding Path=(local:Element.IconContainerSize), RelativeSource={RelativeSource Self}}" />
         <Setter Property="Width" Value="{Binding Path=(local:Element.IconContainerSize), RelativeSource={RelativeSource Self}}" />
-        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="Background" Value="{x:Null}" />
         <Setter Property="Template" Value="{StaticResource Default_Template}" />
 
         <Style.Triggers>

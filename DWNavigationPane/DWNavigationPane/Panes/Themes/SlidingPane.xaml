@@ -1,16 +1,36 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:DWNavigationPane"
-    xmlns:converters="clr-namespace:DWNavigationPane.Converters">
+    xmlns:converters="clr-namespace:DWNavigationPane.Converters"
+    xmlns:local="clr-namespace:DWNavigationPane">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type local:SlidingPane}" BasedOn="{StaticResource {x:Type local:AnimatedPane}}">
-        <Setter Property="IsTransformInverted" Value="True"/>
+    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:SlidingPane}">
+        <Setter Property="IsTransformInverted" Value="True" />
         <Setter Property="SlideDirection" Value="Left" />
         <Setter Property="Width" Value="200" />
+
+        <Setter Property="OpenTransformAnimation">
+            <Setter.Value>
+                <DoubleAnimation To="0" Duration="0:0:0.4">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseOut" />
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="CloseTransformAnimation">
+            <Setter.Value>
+                <DoubleAnimation To="1" Duration="0:0:0.4">
+                    <DoubleAnimation.EasingFunction>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </DoubleAnimation.EasingFunction>
+                </DoubleAnimation>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
