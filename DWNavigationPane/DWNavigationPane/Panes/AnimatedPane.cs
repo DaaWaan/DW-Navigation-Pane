@@ -146,7 +146,7 @@ namespace DWNavigationPane
         public double TransformProgress
         {
             get => (double)GetValue(TransformProgressProperty);
-            internal set => SetValue(TransformProgressProperty, value);
+            set => SetValue(TransformProgressProperty, value);
         }
 
         public static readonly DependencyProperty TransformProgressProperty = DependencyProperty.Register(
@@ -203,16 +203,6 @@ namespace DWNavigationPane
 
         #endregion Dependency Properties
 
-        private void TransformAnimationInit()
-        {
-            if(IsTransformInverted)
-            {
-                DoubleAnimation animation = OpenTransformAnimation;
-                OpenTransformAnimation = CloseTransformAnimation;
-                CloseTransformAnimation = animation;
-            }
-        }
-
         private void TransformProgressInit()
         {
             if(IsTransformInverted)
@@ -228,7 +218,6 @@ namespace DWNavigationPane
         public override void EndInit()
         {
             base.EndInit();
-            TransformAnimationInit();
             TransformProgressInit();
         }
 
