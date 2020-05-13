@@ -6,17 +6,15 @@ using System.Windows.Markup;
 namespace DWNavigationPane.Converters
 {
     /// <summary>
-    /// Provides multiplication of a double to a factor.
+    /// Provides checking if value is null.
     /// </summary>
-    internal class ScaleConverter : MarkupExtension, IValueConverter
+    internal class IsNullConverter : MarkupExtension, IValueConverter
     {
-        public double Factor { get; set; }
-
         #region Interface Implementations
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (double)value * Factor;
+            return (value == null);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

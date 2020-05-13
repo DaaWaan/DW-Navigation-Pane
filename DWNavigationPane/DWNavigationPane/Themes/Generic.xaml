@@ -1,7 +1,6 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/DWNavigationPane;component/Themes/NavigationPane.xaml" />
-        <ResourceDictionary Source="/DWNavigationPane;component/Themes/PaneButton.xaml" />
-        <ResourceDictionary Source="/DWNavigationPane;component/Themes/PaneBadgedButton.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AllPanes.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Items/Themes/AllItems.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

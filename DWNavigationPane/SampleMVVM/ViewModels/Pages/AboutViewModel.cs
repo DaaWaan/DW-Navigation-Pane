@@ -10,10 +10,6 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "About";
 
-        public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.InformationCircleOutlineiOS;
-
-        public IPaneElement PaneElement { get; }
-
         /// <summary>
         /// For Design-time support
         /// </summary>
@@ -26,12 +22,6 @@ namespace SampleMVVM.ViewModels
         public AboutViewModel(INavigator navigator)
         {
             Navigator = navigator;
-            PaneElement = new DWNavigationPane.PaneButton()
-            {
-                Icon = Icon,
-                Content = DisplayName,
-                Command = new RelayCommand<object>((_) => Navigator.SetActivePage(this))
-            };
         }
     }
 }

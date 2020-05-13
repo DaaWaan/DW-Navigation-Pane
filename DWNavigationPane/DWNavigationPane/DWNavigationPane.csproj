@@ -49,20 +49,23 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\IsNullConverter.cs" />
     <Compile Include="Converters\PercentToRangeConverter.cs" />
+    <Compile Include="Converters\Mult3Converter.cs" />
+    <Compile Include="Converters\EnumToDoubleConverter.cs" />
+    <Compile Include="DataTypes\Element.cs" />
+    <Compile Include="DataTypes\Item.cs" />
+    <Compile Include="Items\PaneIcon.cs" />
     <Compile Include="Converters\ScaleFractionConverter.cs" />
     <Compile Include="Converters\ScaleConverter.cs" />
-    <Compile Include="PaneBadgedButton.cs" />
-    <Compile Include="TemplateSelectors\PaneItemTemplateSelector.cs" />
+    <Compile Include="Items\PaneToggleButton.cs" />
+    <Compile Include="Panes\AnimatedPane.cs" />
+    <Compile Include="Panes\SlidingPane.cs" />
+    <Compile Include="Panes\StaticPane.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes\IPaneElement.cs" />
-    <Compile Include="DataTypes\IPaneHolder.cs" />
-    <Compile Include="DataTypes\IPaneItem.cs" />
-    <Compile Include="DataTypes\PaneItemCollection.cs" />
-    <Compile Include="NavigationPane.cs" />
-    <Compile Include="PaneButton.cs" />
-    <Compile Include="PaneHeaderButton.cs" />
+    <Compile Include="Panes\ExtendingPane.cs" />
+    <Compile Include="Items\PaneButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,22 +97,51 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Items\Themes\AllItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Items\Themes\PaneButtonBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Items\Themes\PaneIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panes\Themes\AllPanes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panes\Themes\AnimatedPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panes\Themes\SlidingPane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panes\Themes\StaticPane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\NavigationPane.xaml">
+    <Page Include="Panes\Themes\ExtendingPane.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\PaneBadgedButton.xaml">
+    <Page Include="Items\Themes\PaneButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\PaneButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Items\Themes\PaneToggleButton.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

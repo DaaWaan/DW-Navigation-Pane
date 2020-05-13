@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/StaticPane.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/SlidingPane.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/ExtendingPane.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

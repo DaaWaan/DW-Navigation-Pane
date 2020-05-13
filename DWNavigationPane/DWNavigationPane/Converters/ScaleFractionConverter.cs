@@ -3,8 +3,11 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane
+namespace DWNavigationPane.Converters
 {
+    /// <summary>
+    /// Provides multiplication of double to a fraction.
+    /// </summary>
     internal class ScaleFractionConverter : MarkupExtension, IValueConverter
     {
         public double Numerator { get; set; }

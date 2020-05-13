@@ -1,5 +1,10 @@
 ﻿using DWNavigationPane;
+using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Sample
 {
@@ -8,15 +13,6 @@ namespace Sample
     /// </summary>
     public partial class MainWindow : Window
     {
-        private void ItemClick(object sender, RoutedEventArgs e)
-        {
-            var Sender = sender as IPaneElement;
-            if (Sender != null)
-            {
-                PageLabel.Text = $"{Sender.Content} Page";
-            }
-        }
-
         public MainWindow()
         {
             InitializeComponent();

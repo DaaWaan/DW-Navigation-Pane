@@ -10,10 +10,6 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "Edit";
 
-        public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.OpeniOS;
-
-        public IPaneElement PaneElement { get; }
-
         /// <summary>
         /// For Design-time support
         /// </summary>
@@ -26,12 +22,6 @@ namespace SampleMVVM.ViewModels
         public EditViewModel(INavigator navigator)
         {
             Navigator = navigator;
-            PaneElement = new PaneButton()
-            {
-                Icon = Icon,
-                Content = DisplayName,
-                Command = new RelayCommand<object>((_) => Navigator.SetActivePage(this))
-            };
         }
     }
 }

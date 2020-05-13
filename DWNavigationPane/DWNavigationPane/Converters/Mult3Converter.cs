@@ -5,15 +5,15 @@ using System.Windows.Data;
 namespace DWNavigationPane.Converters
 {
     /// <summary>
-    /// Provides multiplication of a bound double to a bound factor with a bound starting value
+    /// Provides multiplication of bound values.
     /// </summary>
-    internal class PercentToRangeConverter : IMultiValueConverter
+    internal class Mult3Converter : IMultiValueConverter
     {
         #region Interface implementations
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            return (double)values[0] * ((double)values[2] - (double)values[1]) + (double)values[1];
+            return (double)values[0] * (double)values[1] * (double)values[2];
         }
 
         public object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)

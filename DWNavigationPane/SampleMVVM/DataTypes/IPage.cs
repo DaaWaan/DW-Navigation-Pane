@@ -3,9 +3,8 @@ using System;
 
 namespace SampleMVVM.DataTypes
 {
-    internal interface IPage : IPaneElementHolder
+    internal interface IPage
     {
-        Enum Icon { get; }
         string DisplayName { get; }
     }
 }

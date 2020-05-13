@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Test">
+    <Style TargetType="{x:Type local:CustomControl1}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Content" Value="{Binding (local:Extension.IconSize), RelativeSource={RelativeSource Self}}"/>
+    </Style>
+</ResourceDictionary>

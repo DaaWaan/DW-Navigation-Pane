@@ -11,10 +11,6 @@ namespace SampleMVVM.ViewModels
     {
         public string DisplayName => "Home";
 
-        public Enum Icon => MahApps.Metro.IconPacks.PackIconIoniconsKind.HomeiOS;
-
-        public IPaneElement PaneElement { get; }
-
         private uint? badge;
 
         public uint? Badge
@@ -35,15 +31,6 @@ namespace SampleMVVM.ViewModels
         public HomeViewModel(INavigator navigator)
         {
             Navigator = navigator;
-            var badgedButton = new PaneBadgedButton()
-            {
-                Icon = Icon,
-                Content = DisplayName,
-                Command = new RelayCommand<object>((_) => Navigator.SetActivePage(this))
-            };
-            badgedButton.SetBinding(PaneBadgedButton.BadgeProperty, new Binding("Badge"));
-            Badge = 5;
-            PaneElement = badgedButton;
         }
     }
 }

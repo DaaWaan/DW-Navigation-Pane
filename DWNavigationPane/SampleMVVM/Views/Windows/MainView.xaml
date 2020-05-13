@@ -21,46 +21,5 @@
 
         <ContentControl Margin="48,0,0,0" Content="{Binding Navigator.ActivePage}" />
 
-        <dwnav:NavigationPane
-            x:Name="NavigationPane"
-            HorizontalAlignment="Left"
-            BackgroundHover="#10FFFFFF"
-            BottomMenu="{Binding BottomMenuPages}"
-            CompactWidth="48"
-            ExtendedWidth="200"
-            FontFamily="Century Gothic"
-            FontSize="13"
-            Foreground="#FFBCBC"
-            ForegroundHover="#4CD3C2"
-            Header="MAIN MENU"
-            IconSize="18"
-            IsExtended="False"
-            MainMenu="{Binding MainMenuPages}">
-            <dwnav:NavigationPane.Resources>
-                <Style TargetType="{x:Type ma:Badged}">
-                    <Setter Property="BadgeForeground" Value="White" />
-                    <Setter Property="BadgeBackground" Value="Red" />
-                    <Setter Property="BadgePlacementMode" Value="BottomRight" />
-                </Style>
-                <Style TargetType="{x:Type Separator}">
-                    <Setter Property="Opacity" Value="0.25" />
-                    <Setter Property="Margin" Value="3.5,7,3.5,7" />
-                </Style>
-            </dwnav:NavigationPane.Resources>
-            <dwnav:NavigationPane.Effect>
-                <DropShadowEffect
-                    BlurRadius="10"
-                    Direction="0"
-                    Opacity="0.7"
-                    ShadowDepth="1" />
-            </dwnav:NavigationPane.Effect>
-            <dwnav:NavigationPane.Background>
-                <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Offset="0" Color="#FF241A30" />
-                    <GradientStop Offset="1" Color="#FF753A38" />
-                    <GradientStop Offset="0.5" Color="#FF004144" />
-                </LinearGradientBrush>
-            </dwnav:NavigationPane.Background>
-        </dwnav:NavigationPane>
     </Grid>
 </Window>

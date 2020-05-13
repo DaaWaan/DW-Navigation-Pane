@@ -8,15 +8,13 @@ namespace DWNavigationPane.Converters
     /// <summary>
     /// Provides multiplication of a double to a factor.
     /// </summary>
-    internal class ScaleConverter : MarkupExtension, IValueConverter
+    internal class EnumToDoubleConverter : MarkupExtension, IValueConverter
     {
-        public double Factor { get; set; }
-
         #region Interface Implementations
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (double)value * Factor;
+            return System.Convert.ToDouble(value);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
