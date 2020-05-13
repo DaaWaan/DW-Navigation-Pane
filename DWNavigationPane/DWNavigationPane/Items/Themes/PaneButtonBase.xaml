@@ -1,29 +1,27 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:DWNavigationPane"
-    xmlns:converter="clr-namespace:DWNavigationPane.Converters">
+    xmlns:converter="clr-namespace:DWNavigationPane.Converters"
+    xmlns:local="clr-namespace:DWNavigationPane">
 
     <Style x:Key="PaneButtonBase" TargetType="{x:Type ButtonBase}">
 
         <Style.Resources>
             <ControlTemplate x:Key="Default_Template" TargetType="{x:Type ButtonBase}">
-                <StackPanel
-                        Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
-                        Orientation="Horizontal">
+                <StackPanel Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Orientation="Horizontal">
                     <local:PaneIcon
-                        local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}"
+                        local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
                         local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
-                        local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}" />
+                        local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}" />
                     <ContentPresenter VerticalAlignment="Center" />
                 </StackPanel>
             </ControlTemplate>
             <ControlTemplate x:Key="IsIconOnly_Template" TargetType="{x:Type ButtonBase}">
                 <Border Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}">
                     <local:PaneIcon
-                        local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}"
+                        local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
                         local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
-                        local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}" />
+                        local:Item.IsBadged="{Binding Path=(local:Item.IsBadged), RelativeSource={RelativeSource TemplatedParent}}" />
                 </Border>
             </ControlTemplate>
         </Style.Resources>
@@ -38,24 +36,24 @@
                 <Setter Property="Opacity" Value="0.5" />
             </Trigger>
 
-            <DataTrigger Binding="{Binding Path=(local:Element.BackgroundAlt), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
-                <Setter Property="Background" Value="{Binding Path=(local:Element.BackgroundAlt), RelativeSource={RelativeSource Self}}"/>
+            <DataTrigger Binding="{Binding Path=(local:Element.Background), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
+                <Setter Property="Background" Value="{Binding Path=(local:Element.Background), RelativeSource={RelativeSource Self}}" />
             </DataTrigger>
-            <DataTrigger Binding="{Binding Path=(local:Element.ForegroundAlt), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(local:Element.ForegroundAlt), RelativeSource={RelativeSource Self}}"/>
+            <DataTrigger Binding="{Binding Path=(local:Element.Foreground), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(local:Element.Foreground), RelativeSource={RelativeSource Self}}" />
             </DataTrigger>
 
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                    <Condition Binding="{Binding Path=(local:Element.BackgroundHover), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False"/>
+                    <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True" />
+                    <Condition Binding="{Binding Path=(local:Element.BackgroundHover), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Background" Value="{Binding Path=(local:Element.BackgroundHover), RelativeSource={RelativeSource Self}}" />
             </MultiDataTrigger>
             <MultiDataTrigger>
                 <MultiDataTrigger.Conditions>
-                    <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True"/>
-                    <Condition Binding="{Binding Path=(local:Element.ForegroundHover), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False"/>
+                    <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" Value="True" />
+                    <Condition Binding="{Binding Path=(local:Element.ForegroundHover), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False" />
                 </MultiDataTrigger.Conditions>
                 <Setter Property="Foreground" Value="{Binding Path=(local:Element.ForegroundHover), RelativeSource={RelativeSource Self}}" />
             </MultiDataTrigger>
