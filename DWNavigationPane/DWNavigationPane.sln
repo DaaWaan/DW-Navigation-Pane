@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWNavigationPane", "DWNavigationPane\DWNavigationPane.csproj", "{426E5A43-2943-41B4-A3AC-959DB644FC27}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{66D5855A-4688-4DDA-BA02-6B63EB772982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample1", "Sample1\Sample1.csproj", "{817FDE1B-4636-49E3-80DA-E1B9530ACC11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{426E5A43-2943-41B4-A3AC-959DB644FC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{426E5A43-2943-41B4-A3AC-959DB644FC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{426E5A43-2943-41B4-A3AC-959DB644FC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{817FDE1B-4636-49E3-80DA-E1B9530ACC11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{817FDE1B-4636-49E3-80DA-E1B9530ACC11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{817FDE1B-4636-49E3-80DA-E1B9530ACC11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{817FDE1B-4636-49E3-80DA-E1B9530ACC11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{817FDE1B-4636-49E3-80DA-E1B9530ACC11} = {66D5855A-4688-4DDA-BA02-6B63EB772982}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C9C79B6E-184F-4280-A7B4-4023535E8132}
