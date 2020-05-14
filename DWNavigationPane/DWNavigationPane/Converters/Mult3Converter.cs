@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using System.Windows.Markup;
 
 namespace DWNavigationPane.Converters
 {
     /// <summary>
     /// Provides multiplication of bound values.
     /// </summary>
-    internal class Mult3Converter : IMultiValueConverter
+    internal class Mult3Converter : MarkupExtension, IMultiValueConverter
     {
         #region Interface implementations
 
@@ -22,5 +23,10 @@ namespace DWNavigationPane.Converters
         }
 
         #endregion Interface implementations
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
+        }
     }
 }

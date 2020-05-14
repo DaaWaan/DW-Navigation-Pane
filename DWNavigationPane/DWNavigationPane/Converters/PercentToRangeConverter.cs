@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using System.Windows.Markup;
 
 namespace DWNavigationPane.Converters
 {
     /// <summary>
     /// Provides multiplication of a bound double to a bound factor with a bound starting value
     /// </summary>
-    internal class PercentToRangeConverter : IMultiValueConverter
+    internal class PercentToRangeConverter : MarkupExtension, IMultiValueConverter
     {
         #region Interface implementations
 
@@ -19,6 +20,11 @@ namespace DWNavigationPane.Converters
         public object[] ConvertBack(object value, Type[] targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this;
         }
 
         #endregion Interface implementations
