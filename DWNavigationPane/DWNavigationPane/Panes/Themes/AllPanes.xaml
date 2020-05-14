@@ -2,7 +2,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/StaticPane.xaml" />
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
-        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/SlidingPane.xaml" />
-        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/ExtendingPane.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/SlidingPanel.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/ExtendingPanel.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
