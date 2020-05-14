@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DWNavigationPane;
+using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,20 @@ namespace Sample2
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void PaneButton_Click(object sender, RoutedEventArgs e)
+        {
+            PageLabel.Text = (string)((FrameworkElement)sender).ToolTip;
+            PageContent.Text = $"{(string)((FrameworkElement)sender).ToolTip} Page";
+            Item.SetIcon(IconHolder, Item.GetIcon((DependencyObject)sender));
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            PageLabel.Text = (string)((MenuItem)sender).Header;
+            PageContent.Text = $"{(string)((MenuItem)sender).Header} Page";
+            Item.SetIcon(IconHolder, Item.GetIcon((DependencyObject)sender));
         }
     }
 }

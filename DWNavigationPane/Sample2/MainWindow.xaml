@@ -14,9 +14,9 @@
     mc:Ignorable="d">
     <Grid>
         <!--#region Content-->
-        <Border>
+        <Border Margin="49,0,0,0">
             <StackPanel
-                Margin="62.5,0,62.5,0"
+                Margin="41.5,0,41.5,0"
                 VerticalAlignment="Center"
                 Orientation="Vertical">
                 <TextBlock
@@ -39,6 +39,7 @@
 
         <dwnav:StaticPane
             Height="{Binding (dwnav:Element.IconContainerSize), RelativeSource={RelativeSource Self}}"
+            Margin="49,0,0,0"
             VerticalAlignment="Top"
             dwnav:Element.BackgroundHover="{x:Null}"
             Background="White"
@@ -50,25 +51,19 @@
             <dwnav:StaticPane.CacheMode>
                 <BitmapCache />
             </dwnav:StaticPane.CacheMode>
-            <DockPanel LastChildFill="False">
-                <dwnav:PaneToggleButton
-                    dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
-                    dwnav:Item.IsIconOnly="True"
-                    IsChecked="{Binding IsOpen, ElementName=SidePane, Mode=TwoWay}" />
-                <TextBlock
-                    x:Name="PageLabel"
-                    Margin="0,0,16,0"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Center"
-                    DockPanel.Dock="Right"
-                    FontSize="16"
-                    FontWeight="Bold"
-                    Text="Home" />
-            </DockPanel>
+            <TextBlock
+                x:Name="PageLabel"
+                Margin="0,0,16,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                DockPanel.Dock="Right"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Home" />
         </dwnav:StaticPane>
 
         <!--#region SidePane-->
-        <dwnav:SlidingPane
+        <dwnav:ExtendingPane
             x:Name="SidePane"
             HorizontalAlignment="Left"
             BorderBrush="{StaticResource DropShadowBorder}"
@@ -77,15 +72,14 @@
             Opacity="0.975"
             RenderOptions.CachingHint="Cache"
             RenderOptions.ClearTypeHint="Auto">
-            <dwnav:SlidingPane.CacheMode>
+            <dwnav:ExtendingPane.CacheMode>
                 <BitmapCache />
-            </dwnav:SlidingPane.CacheMode>
+            </dwnav:ExtendingPane.CacheMode>
             <DockPanel LastChildFill="True">
                 <dwnav:PaneToggleButton
                     VerticalAlignment="Top"
                     dwnav:Element.BackgroundHover="{x:Null}"
-                    dwnav:Element.IconSize="15"
-                    dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ArrowBackMD}"
+                    dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
                     BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,0,1,0"
                     Content="MENU"
@@ -93,28 +87,70 @@
                     FontSize="13"
                     FontWeight="SemiBold"
                     IsChecked="{Binding IsOpen, ElementName=SidePane, Mode=TwoWay}" />
-                <Separator
-                    Margin="0"
-                    VerticalAlignment="Top"
-                    Background="{StaticResource DarkerBlue}"
-                    DockPanel.Dock="Top" />
                 <Border
+                    Width="245"
+                    HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,1,0,0"
+                    ClipToBounds="True"
                     DockPanel.Dock="Bottom">
                     <StackPanel
-                        Width="Auto"
+                        Width="245"
                         Height="{Binding (dwnav:Element.IconContainerSize), RelativeSource={RelativeSource Self}}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        DockPanel.Dock="Bottom"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Stretch"
                         Orientation="Horizontal">
                         <StackPanel.Resources>
                             <Style TargetType="{x:Type ma:Badged}">
                                 <Setter Property="BadgeBackground" Value="Red" />
                             </Style>
+                            <Storyboard x:Key="SidePaneBar_PaneOpen">
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                    To="47"
+                                    Duration="0:0:0.4">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseOut" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                            <Storyboard x:Key="SidePaneBar_PaneClose">
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                    To="0"
+                                    Duration="0:0:0.4">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase EasingMode="EaseInOut" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
                         </StackPanel.Resources>
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform X="0" />
+                        </StackPanel.RenderTransform>
+                        <StackPanel.Style>
+                            <Style TargetType="{x:Type StackPanel}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard x:Name="SidePaneBar_PaneOpen" Storyboard="{StaticResource SidePaneBar_PaneOpen}" />
+                                        </DataTrigger.EnterActions>
+                                        <DataTrigger.ExitActions>
+                                            <RemoveStoryboard BeginStoryboardName="SidePaneBar_PaneOpen" />
+                                        </DataTrigger.ExitActions>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                        <DataTrigger.EnterActions>
+                                            <BeginStoryboard x:Name="SidePaneBar_PaneClose" Storyboard="{StaticResource SidePaneBar_PaneClose}" />
+                                        </DataTrigger.EnterActions>
+                                        <DataTrigger.ExitActions>
+                                            <RemoveStoryboard BeginStoryboardName="SidePaneBar_PaneClose" />
+                                        </DataTrigger.ExitActions>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
                         <dwnav:PaneButton
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}"
                             dwnav:Item.IsIconOnly="True"
@@ -137,9 +173,86 @@
                             dwnav:Item.IsIconOnly="True"
                             Click="PaneButton_Click"
                             ToolTip="Help" />
+                        <dwnav:PaneToggleButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.MoreiOS}" dwnav:Item.IsIconOnly="True">
+                            <dwnav:PaneToggleButton.Resources>
+                                <Storyboard x:Key="SettingsButton_PaneOpen">
+                                    <ObjectAnimationUsingKeyFrames
+                                        BeginTime="0:0:0.4"
+                                        Storyboard.TargetProperty="Visibility"
+                                        Duration="0">
+                                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </dwnav:PaneToggleButton.Resources>
+                            <dwnav:PaneToggleButton.Style>
+                                <Style TargetType="{x:Type dwnav:PaneToggleButton}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard x:Name="SettingsButton_PaneOpen" Storyboard="{StaticResource SettingsButton_PaneOpen}" />
+                                            </DataTrigger.EnterActions>
+                                            <DataTrigger.ExitActions>
+                                                <RemoveStoryboard BeginStoryboardName="SettingsButton_PaneOpen" />
+                                            </DataTrigger.ExitActions>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </dwnav:PaneToggleButton.Style>
+                            <dwnav:PaneToggleButton.ContextMenu>
+                                <ContextMenu
+                                    FontSize="11"
+                                    Foreground="DarkSlateGray"
+                                    Opacity="0.95"
+                                    Placement="Top">
+                                    <ContextMenu.Resources>
+                                        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
+                                            <EventSetter Event="Click" Handler="MenuItem_Click" />
+                                        </Style>
+                                    </ContextMenu.Resources>
+                                    <MenuItem dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}" Header="Home">
+                                        <MenuItem.Icon>
+                                            <maicons:PackIconIonicons
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Kind="HomeMD" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ListBoxMD}" Header="Reports">
+                                        <MenuItem.Icon>
+                                            <maicons:PackIconIonicons
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Kind="ListBoxMD" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.DocumentiOS}" Header="Documents">
+                                        <MenuItem.Icon>
+                                            <maicons:PackIconIonicons
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Kind="DocumentiOS" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}" Header="Help">
+                                        <MenuItem.Icon>
+                                            <maicons:PackIconIonicons
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Kind="HelpiOS" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </dwnav:PaneToggleButton.ContextMenu>
+                        </dwnav:PaneToggleButton>
                     </StackPanel>
                 </Border>
-                <Grid Background="{StaticResource DarkBlue}">
+                <Grid
+                    Width="{Binding ExtendedWidth, ElementName=SidePane}"
+                    HorizontalAlignment="Center"
+                    Background="{StaticResource DarkBlue}">
                     <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
                         <Border
                             VerticalAlignment="Top"
@@ -190,12 +303,12 @@
                             </Style>
                         </Rectangle.Style>
                         <Rectangle.Fill>
-                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePane}" Color="#FF1F2227" />
+                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePane, Converter={local:InvertPercentConverter}}" Color="#FF1F2227" />
                         </Rectangle.Fill>
                     </Rectangle>
                 </Grid>
             </DockPanel>
-        </dwnav:SlidingPane>
+        </dwnav:ExtendingPane>
         <!--#endregion SidePane-->
 
     </Grid>
