@@ -113,7 +113,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DWNavigationPane\DWNavigationPane.csproj">
+    <ProjectReference Include="..\..\DWNavigationPane\DWNavigationPane.csproj">
       <Project>{426e5a43-2943-41b4-a3ac-959db644fc27}</Project>
       <Name>DWNavigationPane</Name>
     </ProjectReference>
