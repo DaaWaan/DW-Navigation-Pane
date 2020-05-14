@@ -8,9 +8,8 @@
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:ExtendingPane}">
+    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:ExtendingPanel}">
 
-        <Setter Property="local:Element.IconContainerSize" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}, Mode=TwoWay}" />
         <Setter Property="CompactWidth" Value="49" />
         <Setter Property="ExtendedWidth" Value="200" />
 

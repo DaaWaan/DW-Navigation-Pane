@@ -4,16 +4,16 @@ using System.Windows;
 namespace DWNavigationPane
 {
     /// <summary>
-    /// An animated Pane that extends when it opens.
+    /// An Panel that extends when it opens.
     /// </summary>
-    public class ExtendingPane : AnimatedPane
+    public class ExtendingPanel : AnimatedPane
     {
         #region Dependency Properties
 
         #region CompactWidth Property
 
         /// <summary>
-        /// Gets or sets the size of the Pane when compact.
+        /// Gets or sets the size of the Panel when compact.
         /// </summary>
         [Category("Layout")]
         [Description("Gets or sets the size of the Pane when compact.")]
@@ -26,7 +26,7 @@ namespace DWNavigationPane
         public static readonly DependencyProperty CompactWidthProperty = DependencyProperty.Register(
             name: "CompactWidth",
             propertyType: typeof(double),
-            ownerType: typeof(ExtendingPane),
+            ownerType: typeof(ExtendingPanel),
             typeMetadata: new PropertyMetadata(
                 defaultValue: default(double)));
 
@@ -35,7 +35,7 @@ namespace DWNavigationPane
         #region ExtendedWidth Property
 
         /// <summary>
-        /// Gets or sets the size of the Pane when compact.
+        /// Gets or sets the size of the Panel when extended.
         /// </summary>
         [Category("Layout")]
         [Description("Gets or sets the size of the Pane when compact.")]
@@ -48,7 +48,7 @@ namespace DWNavigationPane
         public static readonly DependencyProperty ExtendedWidthProperty = DependencyProperty.Register(
             name: "ExtendedWidth",
             propertyType: typeof(double),
-            ownerType: typeof(ExtendingPane),
+            ownerType: typeof(ExtendingPanel),
             typeMetadata: new PropertyMetadata(
                 defaultValue: default(double)));
 
@@ -56,12 +56,12 @@ namespace DWNavigationPane
 
         #endregion Dependency Properties
 
-        static ExtendingPane()
+        static ExtendingPanel()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                forType: typeof(ExtendingPane),
+                forType: typeof(ExtendingPanel),
                 typeMetadata: new FrameworkPropertyMetadata(
-                    defaultValue: typeof(ExtendingPane)));
+                    defaultValue: typeof(ExtendingPanel)));
         }
     }
 }

@@ -60,11 +60,11 @@
     <Compile Include="Converters\ScaleConverter.cs" />
     <Compile Include="Items\PaneToggleButton.cs" />
     <Compile Include="Panes\AnimatedPane.cs" />
-    <Compile Include="Panes\SlidingPane.cs" />
+    <Compile Include="Panes\SlidingPanel.cs" />
     <Compile Include="Panes\StaticPane.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Panes\ExtendingPane.cs" />
+    <Compile Include="Panes\ExtendingPanel.cs" />
     <Compile Include="Items\PaneButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -121,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Panes\Themes\SlidingPane.xaml">
+    <Page Include="Panes\Themes\SlidingPanel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -133,7 +133,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Panes\Themes\ExtendingPane.xaml">
+    <Page Include="Panes\Themes\ExtendingPanel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -8,7 +8,7 @@
         <ResourceDictionary Source="/DWNavigationPane;component/Panes/Themes/AnimatedPane.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:SlidingPane}">
+    <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:SlidingPanel}">
 
         <Setter Property="IsTransformInverted" Value="True" />
         <Setter Property="SlideDirection" Value="Right" />

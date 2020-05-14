@@ -6,40 +6,40 @@ using System.Windows.Media;
 namespace DWNavigationPane
 {
     /// <summary>
-    /// Indicates where the Pane should slide
+    /// Indicates where the Pane should slide horizontally
     /// </summary>
-    public enum SlideDirection
+    public enum HorizontalSlideDirection
     {
         Right = -1,
         Left = 1
     }
 
     /// <summary>
-    /// An animated Pane that slides when it opens.
+    /// An Panel that slides when it opens.
     /// </summary>
-    public class SlidingPane : AnimatedPane
+    public class SlidingPanel : AnimatedPane
     {
         #region Dependency Properties
 
         #region SlideDirection Property
 
         /// <summary>
-        /// Indicates where the Pane should slide.
+        /// Indicates where the Panel should slide.
         /// </summary>
         [Category("Common")]
         [Description("Indicates where the Pane should slide.")]
-        public SlideDirection SlideDirection
+        public HorizontalSlideDirection SlideDirection
         {
-            get => (SlideDirection)GetValue(SlideDirectionProperty);
+            get => (HorizontalSlideDirection)GetValue(SlideDirectionProperty);
             set => SetValue(SlideDirectionProperty, value);
         }
 
         public static readonly DependencyProperty SlideDirectionProperty = DependencyProperty.Register(
             name: "SlideDirection",
-            propertyType: typeof(SlideDirection),
-            ownerType: typeof(SlidingPane),
+            propertyType: typeof(HorizontalSlideDirection),
+            ownerType: typeof(SlidingPanel),
             typeMetadata: new PropertyMetadata(
-                defaultValue: default(SlideDirection)));
+                defaultValue: default(HorizontalSlideDirection)));
 
         #endregion SlideDirection Property
 
@@ -59,12 +59,12 @@ namespace DWNavigationPane
             TransformBindingsInit();
         }
 
-        static SlidingPane()
+        static SlidingPanel()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                forType: typeof(SlidingPane),
+                forType: typeof(SlidingPanel),
                 typeMetadata: new FrameworkPropertyMetadata(
-                    defaultValue: typeof(SlidingPane)));
+                    defaultValue: typeof(SlidingPanel)));
         }
     }
 }
