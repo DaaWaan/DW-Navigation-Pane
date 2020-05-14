@@ -13,8 +13,8 @@
             <converters:PercentToRangeConverter x:Key="PercentToRangeConverter" />
         </Style.Resources>
 
-        <Setter Property="local:Element.IconContainerSize" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="CompactWidth" Value="50" />
+        <Setter Property="local:Element.IconContainerSize" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}, Mode=TwoWay}" />
+        <Setter Property="CompactWidth" Value="49" />
         <Setter Property="ExtendedWidth" Value="200" />
 
         <Setter Property="Width">

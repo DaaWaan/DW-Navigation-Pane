@@ -7,7 +7,7 @@
         <Setter Property="Foreground" Value="White" />
 
         <Setter Property="local:Element.IconSize" Value="18" />
-        <Setter Property="local:Element.IconContainerSize" Value="48" />
+        <Setter Property="local:Element.IconContainerSize" Value="49" />
         <Setter Property="local:Element.BackgroundHover" Value="#FF20242B" />
         <Setter Property="local:Element.ForegroundHover" Value="#FFA6E22E" />
 
