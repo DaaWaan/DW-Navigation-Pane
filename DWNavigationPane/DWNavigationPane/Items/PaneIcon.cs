@@ -26,7 +26,7 @@ namespace DWNavigationPane
         {
             if(Item.GetIsBadged(this))
             {
-                var badge = Item.GetBadge(this);
+                object badge = Item.GetBadge(this);
                 Item.SetBadge(this, 0);
                 Item.SetBadge(this, badge);
             }
