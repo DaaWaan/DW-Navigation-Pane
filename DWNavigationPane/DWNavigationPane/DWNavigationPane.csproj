@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Items\Themes\PaneItemBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Panes\Themes\AllPanes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
