@@ -13,7 +13,6 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-
         <!--#region Content-->
         <Border>
             <StackPanel
@@ -43,7 +42,7 @@
             VerticalAlignment="Top"
             dwnav:Element.BackgroundHover="{x:Null}"
             Background="White"
-            BorderBrush="#33000000"
+            BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,0,1"
             Foreground="#FF1A1D22"
             RenderOptions.CachingHint="Cache"
@@ -69,7 +68,7 @@
         <dwnav:SlidingPane
             x:Name="SidePane"
             HorizontalAlignment="Left"
-            BorderBrush="#33000000"
+            BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,1,0"
             IsOpen="False"
             Opacity="0.975"
@@ -84,7 +83,7 @@
                     dwnav:Element.BackgroundHover="{x:Null}"
                     dwnav:Element.IconSize="15"
                     dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ArrowBackMD}"
-                    BorderBrush="#FF15181D"
+                    BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,0,1,0"
                     Content="MENU"
                     DockPanel.Dock="Top"
@@ -94,11 +93,11 @@
                 <Separator
                     Margin="0"
                     VerticalAlignment="Top"
-                    Background="#FF15181D"
+                    Background="{StaticResource DarkerBlue}"
                     DockPanel.Dock="Top" />
                 <Border
                     VerticalAlignment="Bottom"
-                    BorderBrush="#FF15181D"
+                    BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,1,0,0"
                     DockPanel.Dock="Bottom">
                     <StackPanel
@@ -137,11 +136,11 @@
                             ToolTip="Help" />
                     </StackPanel>
                 </Border>
-                <Grid Background="#FF1F2227">
+                <Grid Background="{StaticResource DarkBlue}">
                     <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
                         <Border
                             VerticalAlignment="Top"
-                            BorderBrush="#FF15181D"
+                            BorderBrush="{StaticResource DarkerBlue}"
                             BorderThickness="0,0,0,1"
                             DockPanel.Dock="Top">
                             <TextBox
@@ -157,24 +156,25 @@
                             dwnav:Element.IconContainerSize="75"
                             dwnav:Element.IconSize="75"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}"
-                            Foreground="#FF15181D" />
+                            Foreground="{StaticResource DarkerBlue}" />
                     </DockPanel>
                     <Rectangle>
+                        <Rectangle.Resources>
+                            <Storyboard x:Key="SidePaneContent_PaneOpen">
+                                <ObjectAnimationUsingKeyFrames
+                                    BeginTime="0:0:0.4"
+                                    Storyboard.TargetProperty="Visibility"
+                                    Duration="0">
+                                    <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </Rectangle.Resources>
                         <Rectangle.Style>
                             <Style TargetType="{x:Type Rectangle}">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
                                         <DataTrigger.EnterActions>
-                                            <BeginStoryboard x:Name="SidePaneContent_PaneOpen">
-                                                <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames
-                                                        BeginTime="0:0:0.4"
-                                                        Storyboard.TargetProperty="Visibility"
-                                                        Duration="0">
-                                                        <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
-                                                    </ObjectAnimationUsingKeyFrames>
-                                                </Storyboard>
-                                            </BeginStoryboard>
+                                            <BeginStoryboard x:Name="SidePaneContent_PaneOpen" Storyboard="{StaticResource SidePaneContent_PaneOpen}" />
                                         </DataTrigger.EnterActions>
                                         <DataTrigger.ExitActions>
                                             <RemoveStoryboard BeginStoryboardName="SidePaneContent_PaneOpen" />

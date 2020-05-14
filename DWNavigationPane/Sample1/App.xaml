@@ -10,6 +10,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="DarkBlue" Color="#FF1F2227" />
+            <SolidColorBrush x:Key="DarkerBlue" Color="#FF15181D" />
+            <SolidColorBrush x:Key="DropShadowBorder" Color="#33000000" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
