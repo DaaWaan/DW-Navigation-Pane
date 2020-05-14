@@ -5,52 +5,10 @@ using System.Windows.Media;
 namespace DWNavigationPane
 {
     /// <summary>
-    /// Provides an attached framework-level set of properties for all DW Navigation Pane controls.
+    /// Provides inheritable attached framework-level set of properties for all DW Navigation Pane controls.
     /// </summary>
     public static class Element
     {
-        #region Regular Attached Properties
-
-        #region Background Property
-
-        /// <summary>
-        /// Gets or sets the background for the Element. This background is applied to the Element before the Trigger for hover.
-        /// </summary>
-
-        public static readonly DependencyProperty BackgroundProperty = DependencyProperty.RegisterAttached(
-            name: "Background",
-            propertyType: typeof(Brush),
-            ownerType: typeof(Element),
-            defaultMetadata: new PropertyMetadata(
-                defaultValue: default(Brush)));
-
-        public static Brush GetBackground(DependencyObject target) => (Brush)target.GetValue(BackgroundProperty);
-
-        public static void SetBackground(DependencyObject target, Brush value) => target.SetValue(BackgroundProperty, value);
-
-        #endregion BackgroundAlt Property
-
-        #region Foreground Property
-
-        /// <summary>
-        /// Gets or sets the foreground for the Element. This foreground is applied to the Element before the Trigger for hover.
-        /// </summary>
-
-        public static readonly DependencyProperty ForegroundProperty = DependencyProperty.RegisterAttached(
-            name: "Foreground",
-            propertyType: typeof(Brush),
-            ownerType: typeof(Element),
-            defaultMetadata: new PropertyMetadata(
-                defaultValue: default(Brush)));
-
-        public static Brush GetForeground(DependencyObject target) => (Brush)target.GetValue(ForegroundProperty);
-
-        public static void SetForeground(DependencyObject target, Brush value) => target.SetValue(ForegroundProperty, value);
-
-        #endregion Foreground Property
-
-        #endregion Regular Attached Properties
-
         #region Inheritable Attached Properties
 
         #region IconSize Property
@@ -127,8 +85,7 @@ namespace DWNavigationPane
                 defaultValue: default(Brush),
                 flags: FrameworkPropertyMetadataOptions.Inherits));
 
-        public static Brush GetForegroundHover(DependencyObject target) => (Brush)target.GetValue(ForegroundHoverProperty) ??
-                                                                           (Brush)target.GetValue(Control.ForegroundProperty);
+        public static Brush GetForegroundHover(DependencyObject target) => (Brush)target.GetValue(ForegroundHoverProperty);
 
         public static void SetForegroundHover(DependencyObject target, Brush value) => target.SetValue(ForegroundHoverProperty, value);
 

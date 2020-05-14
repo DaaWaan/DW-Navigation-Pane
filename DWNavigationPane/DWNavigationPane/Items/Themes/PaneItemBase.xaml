@@ -7,11 +7,11 @@
     <Style x:Key="PaneItemBase" TargetType="{x:Type Control}">
         <Style.Triggers>
 
-            <DataTrigger Binding="{Binding Path=(local:Element.Background), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
-                <Setter Property="Background" Value="{Binding Path=(local:Element.Background), RelativeSource={RelativeSource Self}}" />
+            <DataTrigger Binding="{Binding Path=(local:Item.Background), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
+                <Setter Property="Background" Value="{Binding Path=(local:Item.Background), RelativeSource={RelativeSource Self}}" />
             </DataTrigger>
-            <DataTrigger Binding="{Binding Path=(local:Element.Foreground), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(local:Element.Foreground), RelativeSource={RelativeSource Self}}" />
+            <DataTrigger Binding="{Binding Path=(local:Item.Foreground), RelativeSource={RelativeSource Self}, Converter={converter:IsNullConverter}}" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(local:Item.Foreground), RelativeSource={RelativeSource Self}}" />
             </DataTrigger>
 
             <MultiDataTrigger>
