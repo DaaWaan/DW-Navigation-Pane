@@ -62,9 +62,9 @@
                 Text="Home" />
         </dwnav:StaticPane>
 
-        <!--#region SidePane-->
-        <dwnav:ExtendingPane
-            x:Name="SidePane"
+        <!--#region SidePanel-->
+        <dwnav:ExtendingPanel
+            x:Name="SidePanel"
             HorizontalAlignment="Left"
             BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,1,0"
@@ -72,9 +72,9 @@
             Opacity="0.975"
             RenderOptions.CachingHint="Cache"
             RenderOptions.ClearTypeHint="Auto">
-            <dwnav:ExtendingPane.CacheMode>
+            <dwnav:ExtendingPanel.CacheMode>
                 <BitmapCache />
-            </dwnav:ExtendingPane.CacheMode>
+            </dwnav:ExtendingPanel.CacheMode>
             <DockPanel LastChildFill="True">
                 <dwnav:PaneToggleButton
                     Width="199"
@@ -87,7 +87,7 @@
                     DockPanel.Dock="Top"
                     FontSize="13"
                     FontWeight="SemiBold"
-                    IsChecked="{Binding IsOpen, ElementName=SidePane, Mode=TwoWay}" />
+                    IsChecked="{Binding IsOpen, ElementName=SidePanel, Mode=TwoWay}" />
                 <Border
                     Width="245"
                     HorizontalAlignment="Right"
@@ -109,7 +109,7 @@
                             <Style TargetType="{x:Type ma:Badged}">
                                 <Setter Property="BadgeBackground" Value="Red" />
                             </Style>
-                            <Storyboard x:Key="SidePaneBar_PaneOpen">
+                            <Storyboard x:Key="SidePanelBar_PaneOpen">
                                 <DoubleAnimation
                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
                                     To="47"
@@ -119,7 +119,7 @@
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
                             </Storyboard>
-                            <Storyboard x:Key="SidePaneBar_PaneClose">
+                            <Storyboard x:Key="SidePanelBar_PaneClose">
                                 <DoubleAnimation
                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
                                     To="0"
@@ -133,20 +133,20 @@
                         <StackPanel.Style>
                             <Style TargetType="{x:Type StackPanel}">
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="True">
                                         <DataTrigger.EnterActions>
-                                            <BeginStoryboard x:Name="SidePaneBar_PaneOpen" Storyboard="{StaticResource SidePaneBar_PaneOpen}" />
+                                            <BeginStoryboard x:Name="SidePanelBar_PaneOpen" Storyboard="{StaticResource SidePanelBar_PaneOpen}" />
                                         </DataTrigger.EnterActions>
                                         <DataTrigger.ExitActions>
-                                            <RemoveStoryboard BeginStoryboardName="SidePaneBar_PaneOpen" />
+                                            <RemoveStoryboard BeginStoryboardName="SidePanelBar_PaneOpen" />
                                         </DataTrigger.ExitActions>
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="False">
                                         <DataTrigger.EnterActions>
-                                            <BeginStoryboard x:Name="SidePaneBar_PaneClose" Storyboard="{StaticResource SidePaneBar_PaneClose}" />
+                                            <BeginStoryboard x:Name="SidePanelBar_PaneClose" Storyboard="{StaticResource SidePanelBar_PaneClose}" />
                                         </DataTrigger.EnterActions>
                                         <DataTrigger.ExitActions>
-                                            <RemoveStoryboard BeginStoryboardName="SidePaneBar_PaneClose" />
+                                            <RemoveStoryboard BeginStoryboardName="SidePanelBar_PaneClose" />
                                         </DataTrigger.ExitActions>
                                     </DataTrigger>
                                 </Style.Triggers>
@@ -197,7 +197,7 @@
                             <dwnav:PaneToggleButton.Style>
                                 <Style TargetType="{x:Type dwnav:PaneToggleButton}">
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="True">
                                             <DataTrigger.EnterActions>
                                                 <BeginStoryboard x:Name="SettingsButton_PaneOpen" Storyboard="{StaticResource SettingsButton_PaneOpen}" />
                                             </DataTrigger.EnterActions>
@@ -205,7 +205,7 @@
                                                 <RemoveStoryboard BeginStoryboardName="SettingsButton_PaneOpen" />
                                             </DataTrigger.ExitActions>
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                        <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="False">
                                             <Setter Property="Visibility" Value="Visible" />
                                         </DataTrigger>
                                     </Style.Triggers>
@@ -266,7 +266,7 @@
                     </StackPanel>
                 </Border>
                 <Grid
-                    Width="{Binding ExtendedWidth, ElementName=SidePane}"
+                    Width="{Binding ExtendedWidth, ElementName=SidePanel}"
                     HorizontalAlignment="Center"
                     Background="{StaticResource DarkBlue}">
                     <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
@@ -292,7 +292,7 @@
                     </DockPanel>
                     <Rectangle>
                         <Rectangle.Resources>
-                            <Storyboard x:Key="SidePaneContent_PaneOpen">
+                            <Storyboard x:Key="SidePanelContent_PaneOpen">
                                 <ObjectAnimationUsingKeyFrames
                                     BeginTime="0:0:0.4"
                                     Storyboard.TargetProperty="Visibility"
@@ -304,28 +304,28 @@
                         <Rectangle.Style>
                             <Style TargetType="{x:Type Rectangle}">
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="True">
                                         <DataTrigger.EnterActions>
-                                            <BeginStoryboard x:Name="SidePaneContent_PaneOpen" Storyboard="{StaticResource SidePaneContent_PaneOpen}" />
+                                            <BeginStoryboard x:Name="SidePanelContent_PaneOpen" Storyboard="{StaticResource SidePanelContent_PaneOpen}" />
                                         </DataTrigger.EnterActions>
                                         <DataTrigger.ExitActions>
-                                            <RemoveStoryboard BeginStoryboardName="SidePaneContent_PaneOpen" />
+                                            <RemoveStoryboard BeginStoryboardName="SidePanelContent_PaneOpen" />
                                         </DataTrigger.ExitActions>
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="False">
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
                         </Rectangle.Style>
                         <Rectangle.Fill>
-                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePane, Converter={local:InvertPercentConverter}}" Color="#FF1F2227" />
+                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePanel, Converter={local:InvertPercentConverter}}" Color="#FF1F2227" />
                         </Rectangle.Fill>
                     </Rectangle>
                 </Grid>
             </DockPanel>
-        </dwnav:ExtendingPane>
-        <!--#endregion SidePane-->
+        </dwnav:ExtendingPanel>
+        <!--#endregion SidePanel-->
 
     </Grid>
 </Window>

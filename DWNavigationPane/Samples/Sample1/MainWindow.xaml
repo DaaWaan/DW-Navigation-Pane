@@ -54,7 +54,7 @@
                 <dwnav:PaneToggleButton
                     dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
                     dwnav:Item.IsIconOnly="True"
-                    IsChecked="{Binding IsOpen, ElementName=SidePane, Mode=TwoWay}" />
+                    IsChecked="{Binding IsOpen, ElementName=SidePanel, Mode=TwoWay}" />
                 <TextBlock
                     x:Name="PageLabel"
                     Margin="0,0,16,0"
@@ -67,9 +67,9 @@
             </DockPanel>
         </dwnav:StaticPane>
 
-        <!--#region SidePane-->
-        <dwnav:SlidingPane
-            x:Name="SidePane"
+        <!--#region SidePanel-->
+        <dwnav:SlidingPanel
+            x:Name="SidePanel"
             HorizontalAlignment="Left"
             BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,1,0"
@@ -77,9 +77,9 @@
             Opacity="0.975"
             RenderOptions.CachingHint="Cache"
             RenderOptions.ClearTypeHint="Auto">
-            <dwnav:SlidingPane.CacheMode>
+            <dwnav:SlidingPanel.CacheMode>
                 <BitmapCache />
-            </dwnav:SlidingPane.CacheMode>
+            </dwnav:SlidingPanel.CacheMode>
             <DockPanel LastChildFill="True">
                 <dwnav:PaneToggleButton
                     VerticalAlignment="Top"
@@ -92,7 +92,7 @@
                     DockPanel.Dock="Top"
                     FontSize="13"
                     FontWeight="SemiBold"
-                    IsChecked="{Binding IsOpen, ElementName=SidePane, Mode=TwoWay}" />
+                    IsChecked="{Binding IsOpen, ElementName=SidePanel, Mode=TwoWay}" />
                 <Separator
                     Margin="0"
                     VerticalAlignment="Top"
@@ -163,7 +163,7 @@
                     </DockPanel>
                     <Rectangle>
                         <Rectangle.Resources>
-                            <Storyboard x:Key="SidePaneContent_PaneOpen">
+                            <Storyboard x:Key="SidePanelContent_PaneOpen">
                                 <ObjectAnimationUsingKeyFrames
                                     BeginTime="0:0:0.4"
                                     Storyboard.TargetProperty="Visibility"
@@ -175,28 +175,28 @@
                         <Rectangle.Style>
                             <Style TargetType="{x:Type Rectangle}">
                                 <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="True">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="True">
                                         <DataTrigger.EnterActions>
-                                            <BeginStoryboard x:Name="SidePaneContent_PaneOpen" Storyboard="{StaticResource SidePaneContent_PaneOpen}" />
+                                            <BeginStoryboard x:Name="SidePanelContent_PaneOpen" Storyboard="{StaticResource SidePanelContent_PaneOpen}" />
                                         </DataTrigger.EnterActions>
                                         <DataTrigger.ExitActions>
-                                            <RemoveStoryboard BeginStoryboardName="SidePaneContent_PaneOpen" />
+                                            <RemoveStoryboard BeginStoryboardName="SidePanelContent_PaneOpen" />
                                         </DataTrigger.ExitActions>
                                     </DataTrigger>
-                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePane}" Value="False">
+                                    <DataTrigger Binding="{Binding IsOpen, ElementName=SidePanel}" Value="False">
                                         <Setter Property="Visibility" Value="Visible" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
                         </Rectangle.Style>
                         <Rectangle.Fill>
-                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePane}" Color="#FF1F2227" />
+                            <SolidColorBrush Opacity="{Binding TransformProgress, ElementName=SidePanel}" Color="#FF1F2227" />
                         </Rectangle.Fill>
                     </Rectangle>
                 </Grid>
             </DockPanel>
-        </dwnav:SlidingPane>
-        <!--#endregion SidePane-->
+        </dwnav:SlidingPanel>
+        <!--#endregion SidePanel-->
 
     </Grid>
 </Window>
