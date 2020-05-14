@@ -9,22 +9,22 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:ExtendingPane}">
-        <Style.Resources>
-            <converters:PercentToRangeConverter x:Key="PercentToRangeConverter" />
-        </Style.Resources>
 
         <Setter Property="local:Element.IconContainerSize" Value="{Binding CompactWidth, RelativeSource={RelativeSource Self}, Mode=TwoWay}" />
         <Setter Property="CompactWidth" Value="49" />
         <Setter Property="ExtendedWidth" Value="200" />
 
-        <Setter Property="Width">
+        <Setter Property="TransformedValue">
             <Setter.Value>
-                <MultiBinding Converter="{StaticResource PercentToRangeConverter}">
+                <MultiBinding Converter="{converters:PercentToRangeConverter}">
                     <Binding Path="TransformProgress" RelativeSource="{RelativeSource Self}" />
                     <Binding Path="CompactWidth" RelativeSource="{RelativeSource Self}" />
                     <Binding Path="ExtendedWidth" RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </Setter.Value>
         </Setter>
+
+        <Setter Property="Width" Value="{Binding TransformedValue, RelativeSource={RelativeSource Self}}" />
+
     </Style>
 </ResourceDictionary>
