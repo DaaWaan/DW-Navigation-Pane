@@ -135,6 +135,29 @@ namespace DWNavigationPane
 
         #endregion OnTransformAnimationChanged Callback
 
+        #region TransformedValue Property
+
+        /// <summary>
+        /// Gets the current resulting transformed value for the AnimatedPane.
+        /// This is computed internally for inheriting Panes.
+        /// </summary>
+        [Category("Layout")]
+        [Description("Gets the current resulting transformed value for the AnimatedPane. This is computed internally for inheriting Panes.")]
+        public double TransformedValue
+        {
+            get => (double)GetValue(TransformedValueProperty);
+            set => SetValue(TransformedValueProperty, value);
+        }
+
+        public static readonly DependencyProperty TransformedValueProperty = DependencyProperty.Register(
+            name: "TransformedValue",
+            propertyType: typeof(double),
+            ownerType: typeof(AnimatedPane),
+            typeMetadata: new PropertyMetadata(
+                defaultValue: default(double)));
+
+        #endregion TransformedValue Property
+
         #region TransformProgress Property
 
         /// <summary>
