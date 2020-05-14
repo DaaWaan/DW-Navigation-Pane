@@ -8,7 +8,6 @@
     <Style BasedOn="{StaticResource {x:Type local:StaticPane}}" TargetType="{x:Type local:AnimatedPane}">
         <Setter Property="IsOpen" Value="False" />
         <Setter Property="IsTransformInverted" Value="False" />
-        <Setter Property="TransformProgress" Value="0" />
 
         <Setter Property="OpenTransformAnimation">
             <Setter.Value>

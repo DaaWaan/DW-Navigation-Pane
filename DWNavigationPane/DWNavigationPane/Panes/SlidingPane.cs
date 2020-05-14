@@ -10,8 +10,8 @@ namespace DWNavigationPane
     /// </summary>
     public enum SlideDirection
     {
-        Left = -1,
-        Right = 1
+        Right = -1,
+        Left = 1
     }
 
     /// <summary>

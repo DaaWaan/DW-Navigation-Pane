@@ -10,7 +10,7 @@
 
     <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:SlidingPane}">
         <Setter Property="IsTransformInverted" Value="True" />
-        <Setter Property="SlideDirection" Value="Left" />
+        <Setter Property="SlideDirection" Value="Right" />
         <Setter Property="Width" Value="200" />
 
         <Setter Property="OpenTransformAnimation">
