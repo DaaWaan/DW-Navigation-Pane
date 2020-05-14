@@ -22,38 +22,39 @@
             </ControlTemplate>
             <ControlTemplate x:Key="IsBadged_Template" TargetType="{x:Type local:PaneIcon}">
                 <Border>
+                    <Border.Resources>
+                        <Storyboard x:Key="CustomBadgeChangedStoryboard">
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                From="0.5"
+                                To="0.9"
+                                Duration="0:0:0.3">
+                                <DoubleAnimation.EasingFunction>
+                                    <BackEase EasingMode="EaseOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                From="0.5"
+                                To="0.9"
+                                Duration="0:0:0.3">
+                                <DoubleAnimation.EasingFunction>
+                                    <BackEase EasingMode="EaseOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </Border.Resources>
                     <ma:Badged
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
+                        BadgeChangedStoryboard="{StaticResource CustomBadgeChangedStoryboard}"
                         BadgeForeground="White"
                         BadgePlacementMode="BottomRight"
                         RenderTransformOrigin="0.5,0.5">
                         <ma:Badged.RenderTransform>
                             <ScaleTransform ScaleX="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}" ScaleY="{Binding Path=(local:Element.IconSize), RelativeSource={RelativeSource TemplatedParent}, Converter={converter:ScaleFractionConverter Numerator=1, Denominator=18}}" />
                         </ma:Badged.RenderTransform>
-                        <ma:Badged.BadgeChangedStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                    From="0.4"
-                                    To="0.8"
-                                    Duration="0:0:0.3">
-                                    <DoubleAnimation.EasingFunction>
-                                        <BackEase EasingMode="EaseOut" />
-                                    </DoubleAnimation.EasingFunction>
-                                </DoubleAnimation>
-                                <DoubleAnimation
-                                    Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                    From="0.4"
-                                    To="0.8"
-                                    Duration="0:0:0.3">
-                                    <DoubleAnimation.EasingFunction>
-                                        <BackEase EasingMode="EaseOut" />
-                                    </DoubleAnimation.EasingFunction>
-                                </DoubleAnimation>
-                            </Storyboard>
-                        </ma:Badged.BadgeChangedStoryboard>
                         <maicons:PackIconControl
                             Width="18"
                             Height="18"
