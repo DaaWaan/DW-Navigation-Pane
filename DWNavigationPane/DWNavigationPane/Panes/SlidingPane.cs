@@ -47,17 +47,9 @@ namespace DWNavigationPane
 
         private void TransformBindingsInit()
         {
-            MultiBinding multiBinding = new MultiBinding();
-            multiBinding.Converter = new Converters.Mult3Converter();
-            multiBinding.Bindings.Add(new Binding("TransformProgress") { Source = this });
-            multiBinding.Bindings.Add(new Binding("Width") { Source = this });
-            multiBinding.Bindings.Add(new Binding("SlideDirection")
-            {
-                Source = this,
-                Converter = new Converters.EnumToDoubleConverter()
-            });
+            Binding binding = new Binding("TransformedValue") { Source = this };
             TranslateTransform transform = new TranslateTransform();
-            BindingOperations.SetBinding(transform, TranslateTransform.XProperty, multiBinding).UpdateTarget();
+            BindingOperations.SetBinding(transform, TranslateTransform.XProperty, binding).UpdateTarget();
             RenderTransform = transform;
         }
 

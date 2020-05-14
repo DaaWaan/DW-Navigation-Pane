@@ -9,6 +9,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style BasedOn="{StaticResource {x:Type local:AnimatedPane}}" TargetType="{x:Type local:SlidingPane}">
+
         <Setter Property="IsTransformInverted" Value="True" />
         <Setter Property="SlideDirection" Value="Right" />
         <Setter Property="Width" Value="200" />
@@ -32,5 +33,19 @@
                 </DoubleAnimation>
             </Setter.Value>
         </Setter>
+
+        <Setter Property="TransformedValue">
+            <Setter.Value>
+                <MultiBinding Converter="{converters:Mult3Converter}">
+                    <Binding Path="TransformProgress" RelativeSource="{RelativeSource Self}" />
+                    <Binding Path="Width" RelativeSource="{RelativeSource Self}" />
+                    <Binding
+                        Converter="{converters:EnumToDoubleConverter}"
+                        Path="SlideDirection"
+                        RelativeSource="{RelativeSource Self}" />
+                </MultiBinding>
+            </Setter.Value>
+        </Setter>
+
     </Style>
 </ResourceDictionary>
