@@ -4,11 +4,68 @@ using System.Windows.Media;
 namespace DWNavigationPane
 {
     /// <summary>
+    /// Indicates the template of the Icon of the Pane Item
+    /// </summary>
+    public enum IconTemplate
+    {
+        Default = 0,
+        Badged
+    }
+
+    /// <summary>
+    /// Indicates the template of the Pane Item
+    /// </summary>
+    public enum ItemTemplate
+    {
+        Default = 0,
+        IconOnly,
+        ContentOnly
+    }
+
+    /// <summary>
     /// Provides attached properties for a Pane item.
     /// </summary>
     public static class Item
     {
         #region Attached properties
+
+        #region IconTemplate Property
+
+        /// <summary>
+        /// Gets or sets the template for the Icon of the Pane Item.
+        /// </summary>
+
+        public static readonly DependencyProperty IconTemplateProperty = DependencyProperty.RegisterAttached(
+            name: "IconTemplate",
+            propertyType: typeof(IconTemplate),
+            ownerType: typeof(Item),
+            defaultMetadata: new PropertyMetadata(
+                defaultValue: IconTemplate.Default));
+
+        public static IconTemplate GetIconTemplate(DependencyObject target) => (IconTemplate)target.GetValue(IconTemplateProperty);
+
+        public static void SetIconTemplate(DependencyObject target, IconTemplate value) => target.SetValue(IconTemplateProperty, value);
+
+        #endregion IconTemplate Property
+
+        #region ItemTemplate Property
+
+        /// <summary>
+        /// Gets or sets the template for the Pane Item.
+        /// </summary>
+
+        public static readonly DependencyProperty ItemTemplateProperty = DependencyProperty.RegisterAttached(
+            name: "ItemTemplate",
+            propertyType: typeof(ItemTemplate),
+            ownerType: typeof(Item),
+            defaultMetadata: new PropertyMetadata(
+                defaultValue: ItemTemplate.Default));
+
+        public static ItemTemplate GetItemTemplate(DependencyObject target) => (ItemTemplate)target.GetValue(ItemTemplateProperty);
+
+        public static void SetItemTemplate(DependencyObject target, ItemTemplate value) => target.SetValue(ItemTemplateProperty, value);
+
+        #endregion IconTemplate Property
 
         #region Icon Property
 
@@ -29,25 +86,6 @@ namespace DWNavigationPane
 
         #endregion Icon Property
 
-        #region IsIconOnly Property
-
-        /// <summary>
-        /// Gets or sets if the Pane Item contains an Icon only.
-        /// </summary>
-
-        public static readonly DependencyProperty IsIconOnlyProperty = DependencyProperty.RegisterAttached(
-            name: "IsIconOnly",
-            propertyType: typeof(bool),
-            ownerType: typeof(Item),
-            defaultMetadata: new PropertyMetadata(
-                defaultValue: false));
-
-        public static bool GetIsIconOnly(DependencyObject target) => (bool)target.GetValue(IsIconOnlyProperty);
-
-        public static void SetIsIconOnly(DependencyObject target, bool value) => target.SetValue(IsIconOnlyProperty, value);
-
-        #endregion IsIconOnly Property
-
         #region Badge Property
 
         /// <summary>
@@ -66,25 +104,6 @@ namespace DWNavigationPane
         public static void SetBadge(DependencyObject target, object value) => target.SetValue(BadgeProperty, value);
 
         #endregion Badge Property
-
-        #region IsBadged Property
-
-        /// <summary>
-        /// Gets or sets if the Pane Item supports a badge.
-        /// </summary>
-
-        public static readonly DependencyProperty IsBadgedProperty = DependencyProperty.RegisterAttached(
-            name: "IsBadged",
-            propertyType: typeof(bool),
-            ownerType: typeof(Item),
-            defaultMetadata: new PropertyMetadata(
-                defaultValue: false));
-
-        public static bool GetIsBadged(DependencyObject target) => (bool)target.GetValue(IsBadgedProperty);
-
-        public static void SetIsBadged(DependencyObject target, bool value) => target.SetValue(IsBadgedProperty, value);
-
-        #endregion IsBadged Property
 
         #region Background Property
 
