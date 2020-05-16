@@ -55,6 +55,7 @@
     <Compile Include="Converters\EnumToDoubleConverter.cs" />
     <Compile Include="DataTypes\Element.cs" />
     <Compile Include="DataTypes\Item.cs" />
+    <Compile Include="Items\PaneItem.cs" />
     <Compile Include="Items\PaneIcon.cs" />
     <Compile Include="Converters\ScaleFractionConverter.cs" />
     <Compile Include="Converters\ScaleConverter.cs" />
@@ -101,15 +102,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Items\Themes\PaneButtonBase.xaml">
+    <Page Include="Items\Themes\PaneItemBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Items\Themes\PaneItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Items\Themes\PaneIcon.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Items\Themes\PaneItemBase.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
