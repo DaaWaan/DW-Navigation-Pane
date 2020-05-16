@@ -4,9 +4,9 @@ using System.Windows.Controls;
 namespace DWNavigationPane
 {
     /// <summary>
-    /// Provides the basic properties of a PaneButton
+    /// Provides the basic properties of a PaneItem
     /// </summary>
-    public class PaneButton : Button
+    public class PaneItem : ContentControl
     {
         public override void EndInit()
         {
@@ -14,12 +14,12 @@ namespace DWNavigationPane
             Loaded += PaneIcon.PaneIconBadge_Loaded;
         }
 
-        static PaneButton()
+        static PaneItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                forType: typeof(PaneButton),
+                forType: typeof(PaneItem),
                 typeMetadata: new FrameworkPropertyMetadata(
-                    defaultValue: typeof(PaneButton)));
+                    defaultValue: typeof(PaneItem)));
         }
     }
 }
