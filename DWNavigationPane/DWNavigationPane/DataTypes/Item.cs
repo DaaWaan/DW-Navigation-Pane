@@ -143,6 +143,25 @@ namespace DWNavigationPane
 
         #endregion Foreground Property
 
+        #region IsActive Property
+
+        /// <summary>
+        /// Gets or sets if the Pane item is active.
+        /// </summary>
+
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.RegisterAttached(
+            name: "IsActive",
+            propertyType: typeof(bool),
+            ownerType: typeof(Item),
+            defaultMetadata: new PropertyMetadata(
+                defaultValue: false));
+
+        public static bool GetIsActive(DependencyObject target) => (bool)target.GetValue(IsActiveProperty);
+
+        public static void SetIsActive(DependencyObject target, bool value) => target.SetValue(IsActiveProperty, value);
+
+        #endregion IsActive Property
+
         #endregion Attached properties
     }
 }
