@@ -10,8 +10,10 @@
 </p>
 
 <div align="center">
-    <img src="Resources/Sample.gif" alt="Sample"/>
-    <img src="Resources/SampleMVVM.gif" alt="SampleMVVM"/>
+    <img src="Resources/Sample1.gif" alt="Sample1"/>
+    <img src="Resources/Sample2.gif" alt="Sample1"/>
+    <img src="Resources/Sample3.gif" alt="Sample1"/>
+    <img src="Resources/Sample4.gif" alt="Sample1"/>
 </div>
 
 <br/>
