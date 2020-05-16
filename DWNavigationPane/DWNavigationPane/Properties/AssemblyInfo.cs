@@ -6,12 +6,12 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DWNavigationPane")]
-[assembly: AssemblyDescription("A Navigation Pane that implements MahApps Metro Controls and Icon Pack.")]
+[assembly: AssemblyDescription("A framework for modern navigation panes and its items for making a better UI for their own WPF applications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Theone Genesis Eclarin")]
 [assembly: AssemblyProduct("DWNavigationPane")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("DWNavigationPane")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -47,5 +47,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.1")]
-[assembly: AssemblyFileVersion("1.0.0.1")]
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
