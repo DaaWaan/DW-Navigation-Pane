@@ -1,0 +1,203 @@
+﻿<Window
+    x:Class="Sample4.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dwnav="clr-namespace:DWNavigationPane;assembly=DWNavigationPane"
+    xmlns:local="clr-namespace:Sample4"
+    xmlns:ma="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:maicons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Sample4"
+    Width="450"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type ma:Badged}">
+            <Setter Property="BadgeChangedStoryboard">
+                <Setter.Value>
+                    <Storyboard>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel Background="#252526" LastChildFill="True">
+
+        <dwnav:StaticPane
+            Height="Auto"
+            VerticalAlignment="Bottom"
+            dwnav:Element.BackgroundHover="#22FFFFFF"
+            dwnav:Element.ForegroundHover="{x:Null}"
+            dwnav:Element.IconContainerSize="18"
+            DockPanel.Dock="Bottom">
+            <StatusBar
+                Height="Auto"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="#0072C6"
+                Foreground="White">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <DockPanel />
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <StatusBarItem HorizontalAlignment="Left" DockPanel.Dock="Left">
+                    <dwnav:PaneItem
+                        dwnav:Element.BackgroundHover="{x:Null}"
+                        dwnav:Element.IconSize="10"
+                        dwnav:Item.Icon="{x:Static maicons:PackIconMicronsKind.Matrix}"
+                        Content="Ready" />
+                </StatusBarItem>
+                <StatusBarItem
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Right"
+                    ToolTip="Path: Samples\Sample4">
+                    <dwnav:PaneItem
+                        dwnav:Element.IconSize="14"
+                        dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.GitBranchiOS}"
+                        Content="Sample4" />
+                </StatusBarItem>
+                <Separator
+                    Margin="5"
+                    Background="#99FFFFFF"
+                    DockPanel.Dock="Right" />
+                <StatusBarItem
+                    HorizontalAlignment="Right"
+                    DockPanel.Dock="Right"
+                    ToolTip="View, Checkout, or Create a Pull request">
+                    <dwnav:PaneItem
+                        dwnav:Element.IconSize="15"
+                        dwnav:Item.Icon="{x:Static maicons:PackIconMaterialKind.Github}"
+                        Content=" Samples / Sample4 " />
+                </StatusBarItem>
+            </StatusBar>
+        </dwnav:StaticPane>
+
+        <dwnav:StaticPane
+            Width="50"
+            HorizontalAlignment="Left"
+            dwnav:Element.BackgroundHover="{x:Null}"
+            dwnav:Element.ForegroundHover="White"
+            dwnav:Element.IconContainerSize="52.5"
+            dwnav:Element.IconSize="21.5"
+            Background="#333333"
+            DockPanel.Dock="Left"
+            Foreground="#AFB0AF">
+            <dwnav:StaticPane.Resources>
+                <Style TargetType="{x:Type dwnav:PaneButton}">
+                    <Setter Property="dwnav:Item.ItemTemplate" Value="IconOnly" />
+                    <EventSetter Event="Click" Handler="PaneButton_Click" />
+                </Style>
+                <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
+                    <Setter Property="BadgeBackground" Value="#0072C6" />
+                    <Setter Property="BadgeForeground" Value="White" />
+                    <Setter Property="BadgePlacementMode" Value="TopRight" />
+                </Style>
+            </dwnav:StaticPane.Resources>
+            <DockPanel>
+                <StackPanel
+                    Width="{Binding (dwnav:Element.IconContainerSize), RelativeSource={RelativeSource Self}}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    DockPanel.Dock="Top">
+                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.CopyiOS}" ToolTip="Explorer" />
+                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" ToolTip="Search" />
+                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.GitBranchiOS}" ToolTip="Source Control" />
+                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.BugiOS}" ToolTip="Debug" />
+                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconFontAwesomeKind.CubesSolid}" ToolTip="Extensions" />
+                </StackPanel>
+                <StackPanel
+                    Width="{Binding (dwnav:Element.IconContainerSize), RelativeSource={RelativeSource Self}}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    DockPanel.Dock="Bottom">
+                    <dwnav:PaneButton
+                        dwnav:Item.Badge="1"
+                        dwnav:Item.Icon="{x:Static maicons:PackIconUniconsKind.Cog}"
+                        dwnav:Item.IconTemplate="Badged"
+                        DockPanel.Dock="Bottom"
+                        ToolTip="Settings" />
+                </StackPanel>
+            </DockPanel>
+        </dwnav:StaticPane>
+
+        <dwnav:ExtendingPanel
+            x:Name="MainPanel"
+            HorizontalAlignment="Left"
+            Background="#252526"
+            CompactWidth="0"
+            DockPanel.Dock="Left"
+            ExtendedWidth="200"
+            FontFamily="Segoe UI"
+            FontSize="13"
+            FontWeight="DemiBold"
+            Foreground="#D4D3CD"
+            IsOpen="True"
+            RenderOptions.CachingHint="Cache"
+            RenderOptions.ClearTypeHint="Auto">
+            <dwnav:ExtendingPanel.OpenTransformAnimation>
+                <DoubleAnimation To="1" Duration="0" />
+            </dwnav:ExtendingPanel.OpenTransformAnimation>
+            <dwnav:ExtendingPanel.CloseTransformAnimation>
+                <DoubleAnimation To="0" Duration="0" />
+            </dwnav:ExtendingPanel.CloseTransformAnimation>
+            <dwnav:ExtendingPanel.CacheMode>
+                <BitmapCache />
+            </dwnav:ExtendingPanel.CacheMode>
+            <Grid Width="200" HorizontalAlignment="Center">
+                <Border
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    BorderBrush="#1E1E1E"
+                    BorderThickness="0,0,0,1">
+                    <TextBlock
+                        x:Name="MainPanelTitle"
+                        Padding="15"
+                        Text="EXPLORER" />
+                </Border>
+                <dwnav:PaneIcon
+                    x:Name="MainPanelIconHolder"
+                    dwnav:Element.IconContainerSize="100"
+                    dwnav:Element.IconSize="100"
+                    dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.CopyiOS}"
+                    Foreground="#1E1E1E" />
+            </Grid>
+        </dwnav:ExtendingPanel>
+
+        <Grid Background="#1E1E1E">
+            <TextBlock
+                Margin="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Foreground="#D4D3CD"
+                TextAlignment="Left"
+                TextTrimming="WordEllipsis"
+                TextWrapping="Wrap">
+                <Run Text="The Extending Pane at the left is inline with this TextBlock's container and it &quot;doesn't use&quot; an animation to change its Width." />
+                <LineBreak />
+                <LineBreak />
+                <Run Text="DW-Navigation-Pane's Extending Panel together with the Sliding Panel do not really internally support not using animations. The Extending Pane in this sample is just using a DoubleAnimation with a Duration equal to 0." />
+            </TextBlock>
+        </Grid>
+
+    </DockPanel>
+</Window>
