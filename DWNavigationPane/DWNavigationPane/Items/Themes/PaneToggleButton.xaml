@@ -4,10 +4,10 @@
     xmlns:local="clr-namespace:DWNavigationPane">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/DWNavigationPane;component/Items/Themes/PaneButtonBase.xaml" />
+        <ResourceDictionary Source="/DWNavigationPane;component/Items/Themes/PaneItemBase.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style BasedOn="{StaticResource PaneButtonBase}" TargetType="{x:Type local:PaneToggleButton}">
+    <Style BasedOn="{StaticResource PaneItemBase}" TargetType="{x:Type local:PaneToggleButton}">
         <Setter Property="IsChecked" Value="False" />
         <Setter Property="IsThreeState" Value="False" />
     </Style>
