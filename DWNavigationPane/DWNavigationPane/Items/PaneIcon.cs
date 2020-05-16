@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Runtime.Remoting.Channels;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DWNavigationPane
@@ -8,29 +9,27 @@ namespace DWNavigationPane
     /// </summary>
     public class PaneIcon : Control
     {
-        public override void EndInit()
-        {
-            base.EndInit();
-            Loaded += PaneIconBadge_Loaded;
-        }
-
         /// <summary>
         /// A hack to trigger the BadgeChangedStoryboard at startup.
-        ///
+        /// </summary>
+        /// <remarks>
         /// MahApps.Metro v1.6.5 badged control currently doesn't have a support for editing the size of
         /// the badge except setting the BadgeChangedStoryboard which is by default uses a ScaleTransform.
-        /// </summary>
-        /// <param name="sender"></param>
+        /// However, the transformation isn't applied at startup until a new badge is set. A simple hack is to
+        /// set a dummy value for the Item at startup.
+        /// </remarks>
+        /// <param name="_sender"></param>
         /// <param name="e"></param>
-        private void PaneIconBadge_Loaded(object sender, RoutedEventArgs e)
+        public static void PaneIconBadge_Loaded(object _sender, RoutedEventArgs e)
         {
-            if(Item.GetIsBadged(this))
+            FrameworkElement sender = _sender as FrameworkElement;
+            if(Item.GetIconTemplate(sender) == IconTemplate.Badged)
             {
-                object badge = Item.GetBadge(this);
-                Item.SetBadge(this, 0);
-                Item.SetBadge(this, badge);
+                object badge = Item.GetBadge(sender);
+                Item.SetBadge(sender, 0);
+                Item.SetBadge(sender, badge);
             }
-            Loaded -= PaneIconBadge_Loaded;
+            sender.Loaded -= PaneIconBadge_Loaded;
         }
 
         static PaneIcon()
