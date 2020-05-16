@@ -199,6 +199,5 @@
                 <Run Text="This text will simultaneously adjust according to its container's Width that is affected by the Extending Pane." />
             </TextBlock>
         </Grid>
-
     </DockPanel>
 </Window>

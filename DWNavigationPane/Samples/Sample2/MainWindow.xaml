@@ -358,6 +358,5 @@
             </DockPanel>
         </dwnav:ExtendingPanel>
         <!--#endregion SidePanel-->
-
     </Grid>
 </Window>

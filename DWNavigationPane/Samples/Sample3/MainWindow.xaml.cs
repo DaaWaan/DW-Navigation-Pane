@@ -1,7 +1,5 @@
 ﻿using DWNavigationPane;
-using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Sample3
 {
@@ -20,11 +18,11 @@ namespace Sample3
         private void PaneButton_Click(object sender, RoutedEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
-            if(!MainPanel.IsOpen)
+            if (!MainPanel.IsOpen)
             {
                 MainPanel.IsOpen = true;
             }
-            else if(previousSenderText == (string)element.ToolTip)
+            else if (previousSenderText == (string)element.ToolTip)
             {
                 MainPanel.IsOpen = false;
                 return;

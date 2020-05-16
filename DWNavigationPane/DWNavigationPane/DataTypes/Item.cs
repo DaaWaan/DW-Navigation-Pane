@@ -65,7 +65,7 @@ namespace DWNavigationPane
 
         public static void SetItemTemplate(DependencyObject target, ItemTemplate value) => target.SetValue(ItemTemplateProperty, value);
 
-        #endregion IconTemplate Property
+        #endregion ItemTemplate Property
 
         #region Icon Property
 
@@ -122,7 +122,7 @@ namespace DWNavigationPane
 
         public static void SetBackground(DependencyObject target, Brush value) => target.SetValue(BackgroundProperty, value);
 
-        #endregion BackgroundAlt Property
+        #endregion Background Property
 
         #region Foreground Property
 

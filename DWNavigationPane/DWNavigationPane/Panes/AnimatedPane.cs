@@ -215,7 +215,8 @@ namespace DWNavigationPane
             {
                 instance.RaiseEvent(new RoutedEventArgs(PaneOpenedEvent));
                 instance.BeginAnimation(TransformProgressProperty, instance.OpenTransformAnimation);
-            } else
+            }
+            else
             {
                 instance.RaiseEvent(new RoutedEventArgs(PaneClosedEvent));
                 instance.BeginAnimation(TransformProgressProperty, instance.CloseTransformAnimation);
@@ -228,7 +229,7 @@ namespace DWNavigationPane
 
         private void TransformProgressInit()
         {
-            if(IsTransformInverted)
+            if (IsTransformInverted)
             {
                 TransformProgress = IsOpen ? 0 : 1;
             }

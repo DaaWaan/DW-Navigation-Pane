@@ -24,6 +24,5 @@
         </Setter>
 
         <Setter Property="Width" Value="{Binding TransformedValue, RelativeSource={RelativeSource Self}}" />
-
     </Style>
 </ResourceDictionary>

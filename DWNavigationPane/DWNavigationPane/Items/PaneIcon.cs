@@ -1,5 +1,4 @@
-﻿using System.Runtime.Remoting.Channels;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace DWNavigationPane
@@ -23,7 +22,7 @@ namespace DWNavigationPane
         public static void PaneIconBadge_Loaded(object _sender, RoutedEventArgs e)
         {
             FrameworkElement sender = _sender as FrameworkElement;
-            if(Item.GetIconTemplate(sender) == IconTemplate.Badged)
+            if (Item.GetIconTemplate(sender) == IconTemplate.Badged)
             {
                 object badge = Item.GetBadge(sender);
                 Item.SetBadge(sender, 0);

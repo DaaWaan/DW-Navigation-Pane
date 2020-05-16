@@ -198,6 +198,5 @@
                 <Run Text="DW-Navigation-Pane's Extending Panel together with the Sliding Panel do not really internally support not using animations. The Extending Pane in this sample is just using a DoubleAnimation with a Duration equal to 0." />
             </TextBlock>
         </Grid>
-
     </DockPanel>
 </Window>

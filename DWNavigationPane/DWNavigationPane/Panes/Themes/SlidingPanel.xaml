@@ -46,6 +46,5 @@
                 </MultiBinding>
             </Setter.Value>
         </Setter>
-
     </Style>
 </ResourceDictionary>
