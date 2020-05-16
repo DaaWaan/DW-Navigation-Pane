@@ -12,6 +12,34 @@
     Width="450"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type ma:Badged}">
+            <Setter Property="BadgeChangedStoryboard">
+                <Setter.Value>
+                    <Storyboard>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <!--#region Content-->
         <Border>
@@ -53,7 +81,7 @@
             <DockPanel LastChildFill="False">
                 <dwnav:PaneToggleButton
                     dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
-                    dwnav:Item.IsIconOnly="True"
+                    dwnav:Item.ItemTemplate="IconOnly"
                     IsChecked="{Binding IsOpen, ElementName=SidePanel, Mode=TwoWay}" />
                 <TextBlock
                     x:Name="PageLabel"
@@ -111,30 +139,34 @@
                         DockPanel.Dock="Bottom"
                         Orientation="Horizontal">
                         <StackPanel.Resources>
-                            <Style TargetType="{x:Type ma:Badged}">
+                            <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
                                 <Setter Property="BadgeBackground" Value="Red" />
+                                <Setter Property="BadgeForeground" Value="White" />
+                                <Setter Property="BadgePlacementMode" Value="BottomRight" />
                             </Style>
                         </StackPanel.Resources>
                         <dwnav:PaneButton
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Home" />
                         <dwnav:PaneButton
                             dwnav:Item.Badge="5"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ListBoxMD}"
-                            dwnav:Item.IsBadged="True"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.IconTemplate="Badged"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Reports" />
                         <dwnav:PaneButton
+                            dwnav:Item.Badge="2"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.DocumentiOS}"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.IconTemplate="Badged"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Documents" />
                         <dwnav:PaneButton
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Help" />
                     </StackPanel>

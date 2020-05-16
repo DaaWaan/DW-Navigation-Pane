@@ -12,6 +12,36 @@
     Width="450"
     Height="450"
     mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type ma:Badged}">
+            <Setter Property="BadgeForeground" Value="White" />
+            <Setter Property="BadgePlacementMode" Value="BottomRight" />
+            <Setter Property="BadgeChangedStoryboard">
+                <Setter.Value>
+                    <Storyboard>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                            From="0.5"
+                            To="0.9"
+                            Duration="0:0:0.3">
+                            <DoubleAnimation.EasingFunction>
+                                <BackEase EasingMode="EaseOut" />
+                            </DoubleAnimation.EasingFunction>
+                        </DoubleAnimation>
+                    </Storyboard>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <!--#region Content-->
         <Border Margin="49,0,0,0">
@@ -81,6 +111,7 @@
                     VerticalAlignment="Top"
                     dwnav:Element.BackgroundHover="{x:Null}"
                     dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
+                    dwnav:Item.ItemTemplate="IconOnly"
                     BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,0,1,0"
                     Content="MENU"
@@ -106,7 +137,7 @@
                             <TranslateTransform X="0" />
                         </StackPanel.RenderTransform>
                         <StackPanel.Resources>
-                            <Style TargetType="{x:Type ma:Badged}">
+                            <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
                                 <Setter Property="BadgeBackground" Value="Red" />
                             </Style>
                             <Storyboard x:Key="SidePanelBar_PaneOpen">
@@ -154,35 +185,36 @@
                         </StackPanel.Style>
                         <dwnav:PaneButton
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Home" />
                         <dwnav:PaneButton
                             dwnav:Item.Badge="5"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ListBoxMD}"
-                            dwnav:Item.IsBadged="True"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.IconTemplate="Badged"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Reports" />
                         <dwnav:PaneButton
                             dwnav:Item.Badge="2"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.DocumentiOS}"
-                            dwnav:Item.IsBadged="True"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.IconTemplate="Badged"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Documents" />
                         <dwnav:PaneButton
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}"
-                            dwnav:Item.IsIconOnly="True"
+                            dwnav:Item.ItemTemplate="IconOnly"
                             Click="PaneButton_Click"
                             ToolTip="Help" />
                         <dwnav:PaneToggleButton
+                            x:Name="MyPaneToggleButton"
                             dwnav:Item.Badge="7"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.MoreiOS}"
-                            dwnav:Item.IsBadged="True"
-                            dwnav:Item.IsIconOnly="True">
+                            dwnav:Item.IconTemplate="Badged"
+                            dwnav:Item.ItemTemplate="IconOnly">
                             <dwnav:PaneToggleButton.Resources>
-                                <Style TargetType="{x:Type ma:Badged}">
+                                <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
                                     <Setter Property="BadgeBackground" Value="Lime" />
                                 </Style>
                                 <Storyboard x:Key="SettingsButton_PaneOpen">
