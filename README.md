@@ -11,8 +11,11 @@
 
 <div align="center">
     <img src="Resources/Sample1.gif" alt="Sample1"/>
+    &nbsp&nbsp&nbsp&nbsp
     <img src="Resources/Sample2.gif" alt="Sample1"/>
+    <p></p>
     <img src="Resources/Sample3.gif" alt="Sample1"/>
+    &nbsp&nbsp&nbsp&nbsp
     <img src="Resources/Sample4.gif" alt="Sample1"/>
 </div>
 
