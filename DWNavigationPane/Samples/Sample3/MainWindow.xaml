@@ -104,8 +104,13 @@
             Foreground="#AFB0AF">
             <dwnav:StaticPane.Resources>
                 <Style TargetType="{x:Type dwnav:PaneButton}">
-                    <Setter Property="dwnav:Item.ItemTemplate" Value="IconOnly" />
                     <EventSetter Event="Click" Handler="PaneButton_Click" />
+                    <Setter Property="dwnav:Item.ItemTemplate" Value="IconOnly" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding (dwnav:Item.IsActive), RelativeSource={RelativeSource Self}}" Value="True">
+                            <Setter Property="Foreground" Value="White" />
+                        </DataTrigger>
+                    </Style.Triggers>
                 </Style>
                 <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
                     <Setter Property="BadgeBackground" Value="#0072C6" />
@@ -119,7 +124,10 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     DockPanel.Dock="Top">
-                    <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.CopyiOS}" ToolTip="Explorer" />
+                    <dwnav:PaneButton
+                        x:Name="ExplorerButton"
+                        dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.CopyiOS}"
+                        ToolTip="Explorer" />
                     <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.SearchiOS}" ToolTip="Search" />
                     <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.GitBranchiOS}" ToolTip="Source Control" />
                     <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.BugiOS}" ToolTip="Debug" />

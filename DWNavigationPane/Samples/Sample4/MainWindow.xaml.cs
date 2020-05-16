@@ -11,9 +11,12 @@ namespace Sample4
         public MainWindow()
         {
             InitializeComponent();
+            previousSender = ExplorerButton;
+            Item.SetIsActive(previousSender, true);
         }
 
         private string previousSenderText = "Explorer";
+        private DependencyObject previousSender;
 
         private void PaneButton_Click(object sender, RoutedEventArgs e)
         {
@@ -25,11 +28,17 @@ namespace Sample4
             else if (previousSenderText == (string)element.ToolTip)
             {
                 MainPanel.IsOpen = false;
+                Item.SetIsActive(element, false);
                 return;
             }
+
+            Item.SetIsActive(previousSender, false);
+            Item.SetIsActive(element, true);
             MainPanelTitle.Text = ((string)element.ToolTip).ToUpper();
             Item.SetIcon(MainPanelIconHolder, Item.GetIcon(element));
             previousSenderText = (string)element.ToolTip;
+
+            previousSender = (DependencyObject)sender;
         }
     }
 }

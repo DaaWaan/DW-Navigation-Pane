@@ -139,6 +139,16 @@
                         DockPanel.Dock="Bottom"
                         Orientation="Horizontal">
                         <StackPanel.Resources>
+                            <Style TargetType="{x:Type dwnav:PaneButton}">
+                                <Setter Property="dwnav:Item.IconTemplate" Value="Badged" />
+                                <Setter Property="dwnav:Item.ItemTemplate" Value="IconOnly" />
+                                <EventSetter Event="Click" Handler="PaneButton_Click" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding (dwnav:Item.IsActive), RelativeSource={RelativeSource Self}}" Value="True">
+                                        <Setter Property="dwnav:Item.Foreground" Value="#FFA6E22E" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
                             <Style BasedOn="{StaticResource {x:Type ma:Badged}}" TargetType="{x:Type ma:Badged}">
                                 <Setter Property="BadgeBackground" Value="Red" />
                                 <Setter Property="BadgeForeground" Value="White" />
@@ -146,29 +156,18 @@
                             </Style>
                         </StackPanel.Resources>
                         <dwnav:PaneButton
+                            x:Name="MyHomeButton"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HomeMD}"
-                            dwnav:Item.ItemTemplate="IconOnly"
-                            Click="PaneButton_Click"
                             ToolTip="Home" />
                         <dwnav:PaneButton
                             dwnav:Item.Badge="5"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.ListBoxMD}"
-                            dwnav:Item.IconTemplate="Badged"
-                            dwnav:Item.ItemTemplate="IconOnly"
-                            Click="PaneButton_Click"
                             ToolTip="Reports" />
                         <dwnav:PaneButton
                             dwnav:Item.Badge="2"
                             dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.DocumentiOS}"
-                            dwnav:Item.IconTemplate="Badged"
-                            dwnav:Item.ItemTemplate="IconOnly"
-                            Click="PaneButton_Click"
                             ToolTip="Documents" />
-                        <dwnav:PaneButton
-                            dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}"
-                            dwnav:Item.ItemTemplate="IconOnly"
-                            Click="PaneButton_Click"
-                            ToolTip="Help" />
+                        <dwnav:PaneButton dwnav:Item.Icon="{x:Static maicons:PackIconIoniconsKind.HelpiOS}" ToolTip="Help" />
                     </StackPanel>
                 </Border>
                 <Grid Background="{StaticResource DarkBlue}">
@@ -185,6 +184,17 @@
                                 ma:TextBoxHelper.Watermark="Search"
                                 Background="White"
                                 Foreground="Black" />
+                        </Border>
+                        <Border VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <ma:NumericUpDown
+                                x:Name="NumericUpDown"
+                                Margin="15"
+                                HorizontalAlignment="Stretch"
+                                Background="White"
+                                Foreground="Black"
+                                Minimum="0"
+                                ValueChanged="NumericUpDown_ValueChanged"
+                                Value="0" />
                         </Border>
                         <dwnav:PaneIcon
                             x:Name="IconHolder"
