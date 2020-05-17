@@ -59,26 +59,24 @@
             <!--#endregion Element.Background & Foreground Hover Trigger-->
 
             <!--#region Control Template Triggers-->
-            <DataTrigger Binding="{Binding Path=(local:Item.IconTemplate), RelativeSource={RelativeSource Self}}" Value="{x:Static local:ItemTemplate.IconOnly}">
+            <DataTrigger Binding="{Binding Path=(local:Item.ItemTemplate), RelativeSource={RelativeSource Self}}" Value="{x:Static local:ItemTemplate.IconOnly}">
                 <Setter Property="Width" Value="{Binding Path=(local:Element.IconContainerSize), RelativeSource={RelativeSource Self}}" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:PaneItem}">
-                            <Border
+                            <local:PaneIcon
+                                local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
+                                local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
+                                local:Item.IconTemplate="{Binding Path=(local:Item.IconTemplate), RelativeSource={RelativeSource TemplatedParent}}"
                                 Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
                                 BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
-                                BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}">
-                                <local:PaneIcon
-                                    local:Item.Badge="{Binding Path=(local:Item.Badge), RelativeSource={RelativeSource TemplatedParent}}"
-                                    local:Item.Icon="{Binding Path=(local:Item.Icon), RelativeSource={RelativeSource TemplatedParent}}"
-                                    local:Item.IconTemplate="{Binding Path=(local:Item.IconTemplate), RelativeSource={RelativeSource TemplatedParent}}" />
-                            </Border>
+                                BorderThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
             </DataTrigger>
 
-            <DataTrigger Binding="{Binding Path=(local:Item.IconTemplate), RelativeSource={RelativeSource Self}}" Value="{x:Static local:ItemTemplate.ContentOnly}">
+            <DataTrigger Binding="{Binding Path=(local:Item.ItemTemplate), RelativeSource={RelativeSource Self}}" Value="{x:Static local:ItemTemplate.ContentOnly}">
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type local:PaneItem}">
