@@ -9,6 +9,14 @@
 <p> DW Navigation Pane offers a set of customizable panes and items to make the construction of navigation panels and bars easier.
 </p>
 
+## Visit the following for more information:
+ * [DW Navigation Pane Wiki](https://github.com/DaaWaan/DW-Navigation-Pane/wiki)
+ * [Releases](https://github.com/DaaWaan/DW-Navigation-Pane/releases)
+ * [NuGet package](https://www.nuget.org/packages/DWNavigationPane/2.0.0.2)
+
+  
+## Samples
+
 <div align="center">
     <img src="Resources/Sample1.gif" alt="Sample1"/>
     &nbsp&nbsp&nbsp
