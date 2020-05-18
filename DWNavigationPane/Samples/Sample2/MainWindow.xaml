@@ -98,7 +98,7 @@
             HorizontalAlignment="Left"
             BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,1,0"
-            IsOpen="True"
+            IsOpen="False"
             Opacity="0.975"
             RenderOptions.CachingHint="Cache"
             RenderOptions.ClearTypeHint="Auto">
