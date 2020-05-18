@@ -12,7 +12,7 @@
 ## Visit the following for more information:
  * [DW Navigation Pane Wiki](https://github.com/DaaWaan/DW-Navigation-Pane/wiki)
  * [Releases](https://github.com/DaaWaan/DW-Navigation-Pane/releases)
- * [NuGet package](https://www.nuget.org/packages/DWNavigationPane/2.0.2)
+ * [NuGet package](https://www.nuget.org/packages/DWNavigationPane)
 
   
 ## Samples
@@ -28,7 +28,7 @@
 </div>
 
 <br/>
-<h2> Limitations for general use (as of v2.0.2): </h2>
+<h2> Limitations for general use: </h2>
 <ul>
     <li> Icons  —  Only icons from MahApps.Metro.IconPacks are currently supported. This will be resolved in the next minor update </li>
     <li> Ready-to-use Animated Navigation Bars  —  Only animated panels are currently provided. It is currently possible however to manually create animated navigation bars using the `AnimatedPane` class. This will be resolved in the next minor update. </li>
