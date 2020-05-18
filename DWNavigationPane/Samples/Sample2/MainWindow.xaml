@@ -98,7 +98,7 @@
             HorizontalAlignment="Left"
             BorderBrush="{StaticResource DropShadowBorder}"
             BorderThickness="0,0,1,0"
-            IsOpen="False"
+            IsOpen="True"
             Opacity="0.975"
             RenderOptions.CachingHint="Cache"
             RenderOptions.ClearTypeHint="Auto">
@@ -111,7 +111,6 @@
                     VerticalAlignment="Top"
                     dwnav:Element.BackgroundHover="{x:Null}"
                     dwnav:Item.Icon="{x:Static maicons:PackIconEvaIconsKind.Menu2}"
-                    dwnav:Item.ItemTemplate="IconOnly"
                     BorderBrush="{StaticResource DarkerBlue}"
                     BorderThickness="0,0,1,0"
                     Content="MENU"
