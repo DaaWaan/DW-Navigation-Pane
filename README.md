@@ -1,5 +1,5 @@
 <div align="center">
-    <img width="300" height="300" src="Resources/Icon.svg" alt="Icon"/>
+    <img width="250" height="250" src="https://i.imgur.com/r8uxwp8.png" alt="Icon"/>
     <h1> DW Navigation Pane v2.0.2</h1>
     <p> A framework for modern navigation panes and its items for making a better UI for WPF applications. </p>
     <p> Supporting WPF .NET Framework (4.5.2+) </p>
