@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace DWNavigationPane
 {
@@ -8,27 +9,39 @@ namespace DWNavigationPane
     /// </summary>
     public class PaneIcon : Control
     {
+        public override void EndInit()
+        {
+            base.EndInit();
+            Loaded += PaneIcon_Loaded;
+        }
+
         /// <summary>
-        /// A hack to trigger the BadgeChangedStoryboard at startup.
+        /// Triggers the BadgeChangedStoryboard at startup.
         /// </summary>
         /// <remarks>
-        /// MahApps.Metro v1.6.5 badged control currently doesn't have a support for editing the size of
-        /// the badge except setting the BadgeChangedStoryboard which is by default uses a ScaleTransform.
-        /// However, the transformation isn't applied at startup until a new badge is set. A simple hack is to
-        /// set a dummy value for the Item at startup.
+        /// The BadgeChangedStoryboard is not triggered when the Badged control is initialized.
+        /// This raises issues where the badge looks different when the badge is changed.
+        /// Triggering the BadgeChangedStoryboard at startup will show the expected layout of a Badge at it's initial state.
         /// </remarks>
         /// <param name="_sender"></param>
         /// <param name="e"></param>
-        public static void PaneIconBadge_Loaded(object _sender, RoutedEventArgs e)
+        public static void PaneIcon_Loaded(object _sender, RoutedEventArgs e)
         {
             FrameworkElement sender = _sender as FrameworkElement;
             if (Item.GetIconTemplate(sender) == IconTemplate.Badged)
             {
+                // Store previous instance of binding because this will be removed
+                // when a DependencyProperty is manually assigned with a value in code-behind
+                Binding binding = BindingOperations.GetBinding(sender, Item.BadgeProperty);
+
                 object badge = Item.GetBadge(sender);
                 Item.SetBadge(sender, 0);
                 Item.SetBadge(sender, badge);
+
+                if (binding != null)
+                    BindingOperations.SetBinding(sender, Item.BadgeProperty, binding);
             }
-            sender.Loaded -= PaneIconBadge_Loaded;
+            sender.Loaded -= PaneIcon_Loaded;
         }
 
         static PaneIcon()

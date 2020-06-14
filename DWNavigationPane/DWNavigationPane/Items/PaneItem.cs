@@ -8,12 +8,6 @@ namespace DWNavigationPane
     /// </summary>
     public class PaneItem : ContentControl
     {
-        public override void EndInit()
-        {
-            base.EndInit();
-            Loaded += PaneIcon.PaneIconBadge_Loaded;
-        }
-
         static PaneItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(

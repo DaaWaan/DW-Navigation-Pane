@@ -8,12 +8,6 @@ namespace DWNavigationPane
     /// </summary>
     public class PaneToggleButton : ToggleButton
     {
-        public override void EndInit()
-        {
-            base.EndInit();
-            Loaded += PaneIcon.PaneIconBadge_Loaded;
-        }
-
         static PaneToggleButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
