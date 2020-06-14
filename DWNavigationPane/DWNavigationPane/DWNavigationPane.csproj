@@ -6,9 +6,32 @@
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>Theone Genesis Eclarin</Authors>
+    <Version>3.0.0</Version>
+    <Description>A framework for modern navigation panes and its items for making a better UI for WPF applications.</Description>
+    <Copyright>Copyright 2020</Copyright>
+    <PackageProjectUrl>https://github.com/DaaWaan/DW-Navigation-Pane</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DaaWaan/DW-Navigation-Pane</RepositoryUrl>
+    <PackageIcon>Icon_128px.png</PackageIcon>
+    <PackageReleaseNotes>Starting from v2.0.0, DW Navigation Pane is an entirely rewritten library. DW Navigation Pane is now a framework to offer more customizability for making Navigation Panes. Visit the project URL for more details! 
+
+
+This version is not the real v3.0. This version is only for early support for MahApps v2.0 and only supports .NET Core</PackageReleaseNotes>
+    <PackageTags>WPF UI Navigation Pane OpenSource .NET Toolkit Modern Metro Material Library</PackageTags>
+    <SignAssembly>false</SignAssembly>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.0.1" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Local Resources\NuGet Packaging Resources\Icon_128px.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
