@@ -8,7 +8,7 @@ namespace DWNavigationPane.Converters
     /// <summary>
     /// Provides multiplication of double to a fraction.
     /// </summary>
-    internal class ScaleFractionConverter : MarkupExtension, IValueConverter
+    public class ScaleFractionConverter : MarkupExtension, IValueConverter
     {
         public double Numerator { get; set; }
         public double Denominator { get; set; }

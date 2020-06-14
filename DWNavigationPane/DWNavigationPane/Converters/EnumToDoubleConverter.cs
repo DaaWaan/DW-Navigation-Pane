@@ -8,7 +8,7 @@ namespace DWNavigationPane.Converters
     /// <summary>
     /// Provides multiplication of a double to a factor.
     /// </summary>
-    internal class EnumToDoubleConverter : MarkupExtension, IValueConverter
+    public class EnumToDoubleConverter : MarkupExtension, IValueConverter
     {
         #region Interface Implementations
 
