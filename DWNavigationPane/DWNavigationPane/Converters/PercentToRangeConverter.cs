@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane
+namespace DWNavigationPane.Converters
 {
     /// <summary>
     /// Provides multiplication of a bound double to a bound factor with a bound starting value
     /// </summary>
-    internal class PercentToRangeConverter : MarkupExtension, IMultiValueConverter
+    public class PercentToRangeConverter : MarkupExtension, IMultiValueConverter
     {
         #region Interface implementations
 

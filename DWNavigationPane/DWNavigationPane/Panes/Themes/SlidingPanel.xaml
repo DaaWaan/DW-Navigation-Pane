@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:DWNavigationPane.Converters"
     xmlns:local="clr-namespace:DWNavigationPane">
 
     <ResourceDictionary.MergedDictionaries>
@@ -35,11 +36,11 @@
 
         <Setter Property="TransformedValue">
             <Setter.Value>
-                <MultiBinding Converter="{local:Mult3Converter}">
+                <MultiBinding Converter="{converters:Mult3Converter}">
                     <Binding Path="TransformProgress" RelativeSource="{RelativeSource Self}" />
                     <Binding Path="Width" RelativeSource="{RelativeSource Self}" />
                     <Binding
-                        Converter="{local:EnumToDoubleConverter}"
+                        Converter="{converters:EnumToDoubleConverter}"
                         Path="SlideDirection"
                         RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>

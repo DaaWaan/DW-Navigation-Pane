@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane
+namespace DWNavigationPane.Converters
 {
     /// <summary>
     /// Provides multiplication of a double to a factor.
     /// </summary>
-    internal class ScaleConverter : MarkupExtension, IValueConverter
+    public class ScaleConverter : MarkupExtension, IValueConverter
     {
         public double Factor { get; set; }
 

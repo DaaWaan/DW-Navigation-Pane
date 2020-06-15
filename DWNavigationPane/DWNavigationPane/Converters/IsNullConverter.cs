@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane
+namespace DWNavigationPane.Converters
 {
     /// <summary>
     /// Provides checking if value is null.
     /// </summary>
-    internal class IsNullConverter : MarkupExtension, IValueConverter
+    public class IsNullConverter : MarkupExtension, IValueConverter
     {
         #region Interface Implementations
 
