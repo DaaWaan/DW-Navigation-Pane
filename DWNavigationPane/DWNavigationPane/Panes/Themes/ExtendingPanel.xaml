@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="clr-namespace:DWNavigationPane.Converters"
     xmlns:local="clr-namespace:DWNavigationPane">
 
     <ResourceDictionary.MergedDictionaries>
@@ -15,7 +14,7 @@
 
         <Setter Property="TransformedValue">
             <Setter.Value>
-                <MultiBinding Converter="{converters:PercentToRangeConverter}">
+                <MultiBinding Converter="{local:PercentToRangeConverter}">
                     <Binding Path="TransformProgress" RelativeSource="{RelativeSource Self}" />
                     <Binding Path="CompactWidth" RelativeSource="{RelativeSource Self}" />
                     <Binding Path="ExtendedWidth" RelativeSource="{RelativeSource Self}" />

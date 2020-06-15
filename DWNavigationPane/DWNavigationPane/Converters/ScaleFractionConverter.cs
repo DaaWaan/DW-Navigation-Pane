@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane.Converters
+namespace DWNavigationPane
 {
     /// <summary>
     /// Provides multiplication of double to a fraction.
     /// </summary>
-    public class ScaleFractionConverter : MarkupExtension, IValueConverter
+    internal class ScaleFractionConverter : MarkupExtension, IValueConverter
     {
         public double Numerator { get; set; }
         public double Denominator { get; set; }
