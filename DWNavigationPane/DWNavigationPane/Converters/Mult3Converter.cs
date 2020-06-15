@@ -3,12 +3,12 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace DWNavigationPane.Converters
+namespace DWNavigationPane
 {
     /// <summary>
     /// Provides multiplication of bound values.
     /// </summary>
-    public class Mult3Converter : MarkupExtension, IMultiValueConverter
+    internal class Mult3Converter : MarkupExtension, IMultiValueConverter
     {
         #region Interface implementations
 
