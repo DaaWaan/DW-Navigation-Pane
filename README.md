@@ -18,13 +18,13 @@
 ## Samples
 
 <div align="center">
-    <img src="https://i.imgur.com/LHpyKZ9.gif" alt="Sample1"/>
+    <img src="https://i.imgur.com/LHpyKZ9.gif" alt="Sample1" width="405"/>
     &nbsp&nbsp&nbsp
-    <img src="https://i.imgur.com/OoTenBp.gif" alt="Sample1"/>
+    <img src="https://i.imgur.com/OoTenBp.gif" alt="Sample1" width="405"/>
     <p></p>
-    <img src="https://i.imgur.com/aR5iCqZ.gif" alt="Sample1"/>
+    <img src="https://i.imgur.com/aR5iCqZ.gif" alt="Sample1" width="405"/>
     &nbsp&nbsp&nbsp
-    <img src="https://i.imgur.com/kZXucvt.gif" alt="Sample1"/>
+    <img src="https://i.imgur.com/kZXucvt.gif" alt="Sample1" width="405"/>
 </div>
 
 <br/>
